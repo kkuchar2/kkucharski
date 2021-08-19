@@ -81,6 +81,7 @@ module.exports = {
         new CopyPlugin({
             patterns: [
                 {from: resolvePath('assets/fonts'), to: resolvePath('dist/assets/fonts')},
+                {from: resolvePath('assets/images'), to: resolvePath('dist/assets/images')},
                 {from: resolvePath('assets/translation'), to: resolvePath('dist/assets/translation')},
             ],
         }),
