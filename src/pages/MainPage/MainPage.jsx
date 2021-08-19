@@ -5,7 +5,7 @@ const MainPage = () => {
 
     return <StyledMainPage>
         <StyledExplosion>
-            <video autoPlay loop>
+            <video autoPlay loop muted>
                 <source src="  https://giant.gfycat.com/LightGoldenKissingbug.mp4" type="video/mp4"/>
                 Your browser does not support the video tag.
             </video>
