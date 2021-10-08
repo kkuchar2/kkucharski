@@ -1,6 +1,6 @@
 import {Route, Switch} from "react-router-dom";
 import React, {useCallback} from "react";
-import {routes} from "routes";
+import {routes} from "./routes";
 
 const Content = () => {
     const mapRoutesToContent = useCallback(() => routes.filter(v => v.enabled)
