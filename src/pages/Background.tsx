@@ -1,69 +1,43 @@
-import React, {useState} from "react";
-import {motion, useViewportScroll} from "framer-motion";
+import React, {useCallback, useEffect, useState} from "react";
+import {motion} from "framer-motion";
+import {interpolatePath} from 'd3-interpolate-path';
+
+const paths = [
+    'M 332.4 55.7 C 340.1 61 343.1 73 350.9 86.1 C 358.8 99.1 371.4 113.2 370.6 125.3 C 369.9 137.3 355.8 147.4 341.8 158.6 C 327.8 169.7 313.9 182.1 300.1 181.9 C 286.3 181.7 272.7 169.1 257.8 158.2 C 242.8 147.3 226.6 138.2 225.1 126.1 C 223.6 114 236.8 98.9 246.8 87.2 C 256.7 75.5 263.5 67.3 271.8 62.1 C 280.1 57 290.1 54.9 301.2 53.2 C 312.3 51.6 324.7 50.3 332.4 55.7 Z',
+    'M 266.48 -88.86 C 268.02 -87.8 268.62 -85.4 270.18 -82.78 C 271.76 -80.18 274.28 -77.36 274.12 -74.94 C 273.98 -72.54 271.16 -70.52 268.36 -68.28 C 265.56 -66.06 262.78 -63.58 260.02 -63.62 C 257.26 -63.66 254.54 -66.18 251.56 -68.36 C 248.56 -70.54 245.32 -72.36 245.02 -74.78 C 244.72 -77.2 247.36 -80.22 249.36 -82.56 C 251.34 -84.9 252.7 -86.54 254.36 -87.58 C 256.02 -88.6 258.02 -89.02 260.24 -89.36 C 262.46 -89.68 264.94 -89.94 266.48 -88.86 Z'
+];
+
+const pathInterpolator = interpolatePath(paths[0], paths[1]);
 
 const Character = () => {
-    const [hasScrolled, setHasScrolled] = useState(false);
-    const {scrollY} = useViewportScroll();
-    const outputRange = [
-        `
-    M 0 0 v 32 c 86 13.5 107 51 171 80 s 148 31 223 46.5 c 130 27 183 108 330 108 s 202 -81 332 -108 c 75 -15.5 159 -17.5 223 -46.5 s 85 -67 171 -80 V 0 H 0 z
-    `,
-        `
-    M 0 0 v 992 c 63 1 133 -1 189 0 s 104 4 215 6 c 124 -1 215 4 322 6 s 183 2 325 -1 c 111 2 173 -2 233 -3 s 96 1 233 5 V 0 H 0 z
-    `
-    ];
-    const clip_path_variants = {
-        open: {
-            d: outputRange[0]
-        },
-        closed: {
-            d: outputRange[1]
-        }
-    };
-    scrollY.onChange((value) => {
-        if (value > 100) {
-            setHasScrolled(true);
-        } else {
-            setHasScrolled(false);
-        }
-    });
+    const [path, setPath] = useState(paths[0]);
 
-    const fill = "#232323";
+    const handleScroll = useCallback((event) => {
+        setPath(pathInterpolator(window.scrollY <= 1000 ? window.scrollY / 1000 : 1.0));
+    }, []);
+
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
 
     return (
         <svg
             id="home__svg"
-            style={{left: 0, top: "-10px"}}
+            style={{position: "fixed", top: 0, left: 0, zIndex: 0}}
             xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 1450 360"
+            viewBox="0 0 500 400"
+            width="100%"
+            height="1600"
+            preserveAspectRatio="none"
         >
             <defs>
-                <motion.path
-                    className="stars_clip"
-                    id="a"
-                    d="M 0 0
-                      v 64
-                      c 86 27 107 102 171 160
-                      s 148 62 223 93
-                      c 130 54 183 216 330 216
-                      s 202 -162 332 -216
-                      c 75 -31 159 -35 223 -93
-                      s 85 -134 171 -160
-                      V 0
-                      H 0
-                      z"
-                    variants={clip_path_variants}
-                    animate={hasScrolled ? "closed" : "open"}
-                    transition={{
-                        ease: "easeInOut",
-                        duration: 0.5
-                    }}
-                />
+                <motion.path className="stars_clip" id="a" d={path}/>
             </defs>
-            <use fill={fill} overflow="visible" href="#a"/>
-            <clipPath id="b">
-                <use overflow="visible" href="#a"/>
-            </clipPath>
+            <use fill={"#003e8d"} fillOpacity="0.2" href="#a"/>
         </svg>
     );
 };

@@ -65,8 +65,8 @@ module.exports = {
         host: "0.0.0.0",
         historyApiFallback: true,
         headers: {
-            "Cross-Origin-Embedder-Policy": "require-corp",
-            "Cross-Origin-Opener-Policy": "same-origin"
+            // "Cross-Origin-Embedder-Policy": "require-corp",
+            // "Cross-Origin-Opener-Policy": "same-origin"
         }
     },
     plugins: [
