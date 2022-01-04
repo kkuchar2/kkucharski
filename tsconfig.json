@@ -1,8 +1,17 @@
 {
   "compilerOptions": {
     "baseUrl": "src",
+    "paths": {
+      "images": ["images"],
+      "util/*": ["util/*"],
+      "appRedux/*": ["redux/*"],
+      "configs": ["configs"],
+      "components/*": ["components/*"],
+      "styles": ["scss/"],
+      "componentStyles": ["scss/components/"]
+    },
     "rootDir": "src",
-    "strict": true,
+    "strict": false,
     "declaration": true,
     "declarationDir": "dist",
     "module": "esnext",

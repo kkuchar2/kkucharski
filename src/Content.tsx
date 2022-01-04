@@ -1,16 +1,23 @@
-import {Route, Switch} from "react-router-dom";
-import React, {useCallback} from "react";
+import React, {useCallback, Suspense} from "react";
+
+import {AnimatePresence} from "framer-motion";
+import {Route, Routes, useLocation} from "react-router-dom";
+
 import {routes} from "./routes";
 
 const Content = () => {
-    const mapRoutesToContent = useCallback(() => routes.filter(v => v.enabled)
+    const location = useLocation();
+
+    const mapRoutesToContent = useCallback(() => routes.filter((v: any) => v.enabled)
         .map((p, k) => {
-            return <Route key={k} exact={p.exact} path={p.path} component={p.component}/>;
+            return <Route key={k} path={p.path} element={p.element} />;
         }), []);
 
-    return <Switch>
-        {mapRoutesToContent()}
-    </Switch>;
+    return <AnimatePresence exitBeforeEnter>
+        <Suspense fallback={null}>
+            <Routes location={location} key={location.pathname}>{mapRoutesToContent()}</Routes>
+        </Suspense>
+    </AnimatePresence>;
 };
 
 export default Content;

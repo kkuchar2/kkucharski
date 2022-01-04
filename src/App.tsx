@@ -5,23 +5,21 @@ import Content from "./Content";
 import './i18n';
 
 const GlobalStyle = createGlobalStyle`
-  html {
-    width: 100%;
-    height: 100%;
-    background: #f6fafd;
-  }
-
   body {
+    height: 100%;
     margin: 0;
+    background-size: cover;
 
     .root {
       width: 100%;
+      height: 100%;
       margin: 0;
       padding: 0;
       display: flex;
 
       .page {
-        overflow-y: auto;
+        width: 100%;
+        height: 100%;
         min-height: 0;
         flex: 1;
         user-select: none;
@@ -32,7 +30,7 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 const App = () => {
-    return <div style={{width: '100%', height: '100%'}}>
+    return <div style={{width: "100%"}}>
         <GlobalStyle/>
         <BrowserRouter>
             <Content/>

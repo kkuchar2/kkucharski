@@ -63,16 +63,13 @@ module.exports = {
     devServer: {
         port: 3000,
         host: "0.0.0.0",
-        historyApiFallback: true,
-        headers: {
-            // "Cross-Origin-Embedder-Policy": "require-corp",
-            // "Cross-Origin-Opener-Policy": "same-origin"
-        }
+        historyApiFallback: true
     },
     plugins: [
         new HtmlWebPackPlugin({template: resolvePath("src/index.html")}),
         new MomentLocalesPlugin({localesToKeep: ['es-us', 'pl']}),
         new CompressionPlugin({algorithm: 'gzip', test: /\.js$/}),
+        new webpack.ProvidePlugin({ process: 'process/browser'}),
         new CopyPlugin({
             patterns: [
                 {from: resolvePath('assets/images'), to: resolvePath('dist/assets/images')},

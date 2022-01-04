@@ -1,165 +1,132 @@
 import styled from "styled-components";
 
 export const StyledMainPage = styled.div`
-  height: 6000px;
+  height: 200px;
   width: 100%;
   box-sizing: border-box;
-  margin-top: 300px;
-`;
-
-interface StyledTitleWrapperProps {
-    offsetY: string;
-    offsetX: string;
-    position: string;
-}
-
-export const StyledTitleWrapper = styled.div <StyledTitleWrapperProps>`
-  position: ${props => props.position};
-  top: 0;
-  left: ${props => props.offsetX};
-  padding: 10px;
-  box-sizing: border-box;
-  width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.6s ease-out;
-
-  @media (max-width: 1000px) {
-    margin-left: 0;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .Typewriter {
-    margin-top: 40px;
-
-    @media (max-width: 600px) {
-      margin-left: 0;
-      margin-top: 30px;
-    }
-  }
-
-  .Typewriter__wrapper {
-    border: 5px solid black;
-    color: rgb(0, 0, 0);
-    font-size: clamp(25px, 1.52rem, 100px);
-    padding: 5px;
-  }
-
-  .Typewriter__cursor {
-    color: transparent;
-    font-size: 0.5em;
-  }
 `;
 
-export const StyledTitle = styled.div`
-  text-align: center;
-  color: rgb(0, 0, 0);
-  z-index: 1;
-  font-size: 1.52em;
-`;
-
-export const StyledTitleHello = styled.div`
-  text-align: center;
-  color: rgb(0, 0, 0);
-  z-index: 1;
-  font-size: clamp(25px, 4.5rem, 100px);
-  font-weight: 1000;
-`;
-
-export const seeMyWorkButtonTheme = {
-    width: "220px",
-    height: "40px",
-    background: "#ffffff",
-    disabledBackground: "rgba(47,47,47,0.43)",
-    hoverBackground: "#0065ff",
-    border: "2px solid " + "#656565",
-    borderRadius: "3px",
-    margin: "50px 0px 0px 10px",
-};
-
-export const seeMyWorkTextTheme = {
-    fontSize: "1.1em",
-    textColor: "#3d3d3d",
-    disabledTextColor: "rgba(255,255,255,0.20)",
-    fontWeight: 500,
-    margin: "0px 0px 0px 10px"
-};
-
-export const StyledMe = styled.div`
-  display: flex;
-  margin-top: 50px;
+export const StyledKeyboardImage = styled.img`
   width: 100%;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  opacity: 0.9;
+  
+  @media (max-width: 600px) {
+    width: 200%;
+  }
+`
+
+export const StyledBottomSection = styled.div`
+  width: 100%;
   box-sizing: border-box;
-
-  @media (max-width: 600px) {
-    flex-direction: column;
-  }
-`;
-
-interface StyledAboutMeProps {
-    opacity: number;
-}
-
-export const StyledAboutMe = styled.div <StyledAboutMeProps>`
-  display: flex;
-  align-items: center;
-  width: 100%;
-  height: 800px;
-  margin-top: 400px;
-  opacity: ${props => props.opacity ? props.opacity : 0};
-  transition: all 1s ease-in-out;
-  background: #eff7fb;
-  
-  @media (max-width: 600px) {
-    flex-direction: column;
-  }
-`;
-
-export const StyledAboutMeDescription = styled.div`
-  font-size: clamp(15px, 1rem, 100px);
-  width: 50%;
-  padding: 10%;
-`;
-
-interface StyledNavbarProps {
-    opacity: number;
-}
-
-export const StyledNavbar = styled.div<StyledNavbarProps>`
-  opacity: 1;
-  height: 60px;
-  background: #232323;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 10;
-`;
-
-export const StyledAboutMeImage = styled.div`
-  width: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
-  left: ${props => props.left};
-  transition: left 1.4s ease;
-  
-  img {
-    position: absolute;
-   
-    border-radius: 50%;
-    transition: all 0.5s ease-in-out;
-    
-    @media (max-width: 600px) {
-      width: 100px;
-      height: 100px;
-    }
+  margin-top: 40px;
+`;
+
+export const StyledContent = styled.div`
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 150px;
+
+  @media (max-width: 600px) {
+    margin-top: 50px;
   }
 `;
+
+export const StyledTopSection = styled.div`
+  width: 50%;
+  max-width: 1500px;
+  min-width: 600px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  overflow-x: hidden;
+  margin-bottom: 50px;
+
+  @media (max-width: 600px) {
+    width: 100%;
+    min-width: 100%;
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-bottom: 0;
+  }
+`;
+
+export const StyledTitleSection = styled.div`
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  margin-bottom: 100px;
+
+  @media (max-width: 600px) {
+    margin-bottom: 20px;
+  }
+`;
+
+export const StyledLink = styled.a`
+  text-decoration: none;
+  background: #202020;
+  width: 150px;
+  display: flex;
+  align-items: center;
+
+  justify-content: center;
+  height: 50px;
+  border-radius: 150px;
+  color: white;
+  font-size: 0.9em;
+  font-weight: 600;
+  margin-left: 30px;
+  margin-right: 30px;
+  transform: scale(1.1);
+
+  @media (max-width: 600px) {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+`;
+
+export const helloTextTheme = {
+    textColor: "#a9a9a9",
+    fontSize: "1.3em",
+    textAlign: "left",
+    fontWeight: 600,
+    margin: "0px 0px 0px 5px"
+};
+
+export const nameTextTheme = {
+    textColor: "#ff9100",
+    fontSize: "2.5em",
+    textAlign: "left",
+    fontWeight: 600,
+    margin: "10px 0px 0px 5px"
+};
+
+export const softwareDevTextTheme = {
+    textColor: "#B4B4B4",
+    fontSize: "1.2em",
+    textAlign: "left",
+    fontWeight: 600,
+    margin: "10px 0px 0px 5px"
+};
+
+export const buttonTextTheme = {
+    textColor: "#b6b6b6",
+    fontSize: "1em",
+    lineHeight: '40px',
+    textAlign: 'center',
+    fontWeight: 600,
+    margin: "2px 10px 0px 0px"
+};
