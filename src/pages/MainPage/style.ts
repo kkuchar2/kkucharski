@@ -11,7 +11,7 @@ export const StyledMainPage = styled.div`
 export const StyledKeyboardImage = styled.img`
   width: 100%;
   opacity: 0.9;
-  
+
   @media (max-width: 600px) {
     width: 200%;
   }
@@ -23,6 +23,7 @@ export const StyledBottomSection = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   margin-top: 40px;
 `;
 
@@ -75,22 +76,50 @@ export const StyledTitleSection = styled.div`
   }
 `;
 
+export const StyledLinkSection = styled.div`
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  height: 100px;
+`;
+
+
+export const AboutMe = styled.div`
+  max-width: 800px;
+`;
+
+export const StyledDescriptionsSection = styled.div`
+  margin-top: 100px;
+  width: 80%;
+  box-sizing: border-box;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+
+  @media (max-width: 600px) {
+    margin-top: 50px;
+  }
+`;
+
 export const StyledLink = styled.a`
   text-decoration: none;
   background: #202020;
-  width: 150px;
+  width: 100px;
   display: flex;
   align-items: center;
-
   justify-content: center;
-  height: 50px;
   border-radius: 150px;
   color: white;
   font-size: 0.9em;
   font-weight: 600;
   margin-left: 30px;
   margin-right: 30px;
-  transform: scale(1.1);
+  transform: scale(1.5);
+  flex-direction: column;
 
   @media (max-width: 600px) {
     margin-left: 10px;
@@ -106,6 +135,25 @@ export const helloTextTheme = {
     margin: "0px 0px 0px 5px"
 };
 
+export const StyledSectionGrid = styled.div`
+  display: grid;
+  grid-gap: 40px;
+  
+  @media (min-width: 1200px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: 1800px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media (max-width: 600px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+`;
+
 export const nameTextTheme = {
     textColor: "#ff9100",
     fontSize: "2.5em",
@@ -114,12 +162,20 @@ export const nameTextTheme = {
     margin: "10px 0px 0px 5px"
 };
 
-export const softwareDevTextTheme = {
+export const aboutTextTheme = {
     textColor: "#B4B4B4",
     fontSize: "1.2em",
     textAlign: "left",
     fontWeight: 600,
     margin: "10px 0px 0px 5px"
+};
+
+export const aboutTextTheme2 = {
+    textColor: "#B4B4B4",
+    fontSize: "1.2em",
+    textAlign: "left",
+    fontWeight: 600,
+    margin: "20px 0px 0px 5px"
 };
 
 export const buttonTextTheme = {
