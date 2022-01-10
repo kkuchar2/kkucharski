@@ -12,12 +12,8 @@ export const StyledPersonalProjectItem = styled.div`
 
   @media (max-width: 600px) {
     flex-direction: column;
-    min-width: 250px;
+    min-width: 200px;
     width: 100%;
-  }
-
-  &:hover {
-    background: #2a2a2a;
   }
 `
 
@@ -37,7 +33,6 @@ export const StyledFirstLink = styled.a`
   align-items: center;
   justify-content: center;
   height: 40px;
-  border-radius: 10px;
   color: white;
   font-size: 0.9em;
   font-weight: 600;
@@ -45,7 +40,7 @@ export const StyledFirstLink = styled.a`
   padding-right: 20px;
 
   &:hover {
-    background: #3d3d3d;
+    background: #5d4aff;
   }
 `;
 
@@ -56,7 +51,6 @@ export const StyledLink = styled.a`
   align-items: center;
   justify-content: center;
   height: 40px;
-  border-radius: 10px;
   color: white;
   font-size: 0.9em;
   font-weight: 600;
@@ -68,7 +62,7 @@ export const StyledLink = styled.a`
     background: #3d3d3d;
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: 400px) {
     margin-left: 0;
     margin-top: 20px;
   }
@@ -77,12 +71,18 @@ export const StyledLink = styled.a`
 export const StyledLinks = styled.div`
   display: flex;
   flex-direction: row;
-  width: 50%;
   margin-top: 30px;
   justify-content: flex-start;
   align-items: flex-start;
 
   @media (max-width: 600px) {
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+  }
+
+  @media (max-width: 400px) {
     width: 100%;
     align-items: flex-start;
     justify-content: flex-start;

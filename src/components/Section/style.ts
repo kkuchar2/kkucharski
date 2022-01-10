@@ -29,15 +29,17 @@ export const StyledTitle = styled.div`
 
 export const idTextTheme = {
     textColor: "#FFB800",
-    fontSize: "1.5em",
+    fontSize: "clamp(1.3rem, 2.5vw, 2rem)",
     textAlign: 'left',
     fontWeight: 600,
-    margin: "0px 0px 0px 0px"
+    margin: "0px 0px 0px 0px",
+    overflowX: 'inherit',
+    overflowY: 'inherit'
 };
 
 export const titleTextTheme = {
-    textColor: "#b6b6b6",
-    fontSize: "1.5em",
+    textColor: "#c7c7c7",
+    fontSize: "clamp(1.3rem, 2.5vw, 2rem)",
     textAlign: 'left',
     fontWeight: 600,
     margin: "0px 0px 0px 30px"

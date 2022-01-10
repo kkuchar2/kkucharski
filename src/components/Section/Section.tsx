@@ -17,7 +17,7 @@ export const Section = (props: SectionProps) => {
 
     return <StyledSection>
         <StyledTitle>
-            <Text theme={idTextTheme} text={id >= 0 && id <= 9 ? `0${id}.` : `{id}.`}/>
+            <Text theme={idTextTheme} text={id >= 0 && id <= 9 ? `0${id}.` : `{id}.`} style={{minWidth: 140}}/>
             <Text theme={titleTextTheme} text={title}/>
         </StyledTitle>
         <StyledChildren paddingBottom={paddingBottom} paddingTop={paddingTop} flexDirection={flexDirection}>

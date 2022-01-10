@@ -70,7 +70,10 @@ export const StyledTitleSection = styled.div`
   justify-content: center;
   flex-direction: column;
   margin-bottom: 100px;
-
+  color: #ff9100;
+  font-size: clamp(1.8rem, 3.2vw, 2rem);
+  font-weight: 600;
+  
   @media (max-width: 600px) {
     margin-bottom: 20px;
   }
@@ -82,8 +85,20 @@ export const StyledLinkSection = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: row;
+  flex-direction: column;
   height: 100px;
+`;
+
+export const StyledLinkTopSection = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  margin-top: 20px;
+`;
+
+export const StyledLinkBottomSection = styled.div`
+  margin-top: 30px;
 `;
 
 
@@ -118,7 +133,25 @@ export const StyledLink = styled.a`
   font-weight: 600;
   margin-left: 30px;
   margin-right: 30px;
-  transform: scale(1.5);
+  flex-direction: column;
+
+  @media (max-width: 600px) {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+`;
+
+export const StyledResumeLink = styled.a`
+  text-decoration: none;
+  background: none;
+  width: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 150px;
+  color: white;
+  font-size: 1.2em;
+  font-weight: 600;
   flex-direction: column;
 
   @media (max-width: 600px) {
@@ -129,16 +162,16 @@ export const StyledLink = styled.a`
 
 export const helloTextTheme = {
     textColor: "#a9a9a9",
-    fontSize: "1.3em",
+    fontSize: "0.8em",
     textAlign: "left",
     fontWeight: 600,
-    margin: "0px 0px 0px 5px"
+    margin: "0px 0px 0px 0px"
 };
 
 export const StyledSectionGrid = styled.div`
   display: grid;
   grid-gap: 40px;
-  
+
   @media (min-width: 1200px) {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -163,7 +196,7 @@ export const nameTextTheme = {
 };
 
 export const aboutTextTheme = {
-    textColor: "#B4B4B4",
+    textColor: "#8d8d8d",
     fontSize: "1.2em",
     textAlign: "left",
     fontWeight: 600,
@@ -171,7 +204,7 @@ export const aboutTextTheme = {
 };
 
 export const aboutTextTheme2 = {
-    textColor: "#B4B4B4",
+    textColor: "#8d8d8d",
     fontSize: "1.2em",
     textAlign: "left",
     fontWeight: 600,
@@ -179,10 +212,10 @@ export const aboutTextTheme2 = {
 };
 
 export const buttonTextTheme = {
-    textColor: "#b6b6b6",
+    textColor: "#8d8d8d",
     fontSize: "1em",
     lineHeight: '40px',
     textAlign: 'center',
     fontWeight: 600,
-    margin: "2px 10px 0px 0px"
+    margin: "0px 0px 0px 0px"
 };

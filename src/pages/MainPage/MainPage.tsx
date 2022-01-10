@@ -12,16 +12,20 @@ import {
     StyledDescriptionsSection,
     StyledKeyboardImage,
     StyledLink,
+    StyledLinkBottomSection,
     StyledLinkSection,
+    StyledLinkTopSection,
     StyledMainPage,
+    StyledResumeLink,
     StyledSectionGrid,
     StyledTitleSection,
-    StyledTopSection
+    StyledTopSection,
 } from "./style";
 
 import {Section} from "components/Section/Section";
 import {WorkDescriptionItem} from "components/WorkDescriptionItem/WorkDescriptionItem";
 import {PersonalProjectItem} from "components/PersonalProjectItem/PersonalProjectItem";
+import Typewriter from 'typewriter-effect';
 
 const MainPage = () => {
 
@@ -31,24 +35,35 @@ const MainPage = () => {
             <StyledTopSection>
                 <StyledTitleSection>
                     <Text theme={helloTextTheme} text={'Hi, my name is'}/>
-                    <Text theme={nameTextTheme} text={'Krzysztof Kucharski'}/>
+                    <Typewriter
+                        onInit={(typewriter) => {
+                            typewriter.typeString('Krzysztof Kucharski')
+                                .pauseFor(2500)
+                                .start();
+                        }}
+                    />
                 </StyledTitleSection>
                 <StyledKeyboardImage src={'/assets/images/keyboard.png'} alt={'keyboard'}/>
             </StyledTopSection>
             <StyledBottomSection>
                 <StyledLinkSection>
-                    <StyledLink href={"https://storage.googleapis.com/kkucharski-server/resume_public_2022.pdf"}
-                                rel="noopener noreferrer" target="_blank" download>
-                        <Text theme={buttonTextTheme} text={'Resume'}/>
-                    </StyledLink>
-                    <StyledLink href={"https://www.linkedin.com/in/kkuchar/"}>
-                        <img style={{opacity: 0.8}} src={'/assets/images/linkedin_icon.svg'} alt={'linkedin_logo'}
-                             width={28}/>
-                    </StyledLink>
-                    <StyledLink href={"https://github.com/kkuchar2"}>
-                        <img style={{opacity: 0.8}} src={'/assets/images/github_icon.svg'} alt={'github_logo'}
-                             width={28}/>
-                    </StyledLink>
+                    <StyledLinkTopSection>
+                        <StyledLink href={"https://www.linkedin.com/in/kkuchar/"}>
+                            <img style={{opacity: 0.8}} src={'/assets/images/linkedin_icon.svg'} alt={'linkedin_logo'}
+                                 width={28}/>
+                        </StyledLink>
+                        <StyledLink href={"https://github.com/kkuchar2"}>
+                            <img style={{opacity: 0.8}} src={'/assets/images/github_icon.svg'} alt={'github_logo'}
+                                 width={28}/>
+                        </StyledLink>
+                    </StyledLinkTopSection>
+                    <StyledLinkBottomSection>
+                        <StyledResumeLink
+                            href={"https://storage.googleapis.com/kkucharski-server/resume_public_2022.pdf"}
+                            rel="noopener noreferrer" target="_blank" download>
+                            <Text theme={buttonTextTheme} text={'Resume'}/>
+                        </StyledResumeLink>
+                    </StyledLinkBottomSection>
                 </StyledLinkSection>
                 <StyledDescriptionsSection>
                     <Section id={1} title={'About'}>

@@ -42,10 +42,10 @@ export const companyTextTheme = {
     margin: "0px 0px 0px 0px"
 };
 
-const textWhiteColor = '#c7c7c7';
+const textWhiteColor = '#8d8d8d';
 
 export const jobTitleTextTheme = {
-    textColor: textWhiteColor,
+    textColor: '#c7c7c7',
     fontSize: "1.2em",
     textAlign: 'left',
     fontWeight: 500,
@@ -53,7 +53,7 @@ export const jobTitleTextTheme = {
 };
 
 export const jobTimeTextTheme = {
-    textColor: '#c03737',
+    textColor: '#7664a4',
     fontSize: "1.2em",
     textAlign: 'left',
     fontWeight: 500,
