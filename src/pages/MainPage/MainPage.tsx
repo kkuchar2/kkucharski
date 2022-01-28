@@ -119,7 +119,7 @@ const MainPage = () => {
                                 projectName={'react-django-administration'}
                                 projectStack={'ReactJS, TypeScript, Webpack, Firebase'}
                                 projectDescription={'React frontend for Django server to manage accounts and tables'}
-                                githubLink={'https://github.com/kkuchar2/docker-django-backend'}
+                                githubLink={'https://github.com/kkuchar2/react-django-administration'}
                                 imageUrl={'/assets/images/react_admin.png'}
                             />
                             <PersonalProjectItem
