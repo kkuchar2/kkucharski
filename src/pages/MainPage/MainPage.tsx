@@ -6,7 +6,6 @@ import {
     aboutTextTheme2,
     buttonTextTheme,
     helloTextTheme,
-    nameTextTheme,
     StyledBottomSection,
     StyledContent,
     StyledDescriptionsSection,
@@ -121,7 +120,6 @@ const MainPage = () => {
                                 projectStack={'ReactJS, TypeScript, Webpack, Firebase'}
                                 projectDescription={'React frontend for Django server to manage accounts and tables'}
                                 githubLink={'https://github.com/kkuchar2/docker-django-backend'}
-                                websiteName={'https://admin.kkucharski.com/'}
                                 imageUrl={'/assets/images/react_admin.png'}
                             />
                             <PersonalProjectItem
@@ -137,7 +135,6 @@ const MainPage = () => {
                                 projectStack={'Docker, docker-compose, Django, MySQL, DigitalOcean, Google Cloud Storage'}
                                 projectDescription={'Django server & MySQL database in Docker - API and data source for all of my future projects'}
                                 githubLink={'https://github.com/kkuchar2/kuchkr-react-component-library'}
-                                websiteName={'https://api.kkucharski.com/'}
                                 imageUrl={'/assets/images/api_kkucharski.png'}
                             />
                             <PersonalProjectItem
