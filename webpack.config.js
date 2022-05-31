@@ -61,7 +61,7 @@ module.exports = {
     },
     optimization: optimization,
     devServer: {
-        port: 3000,
+        port: 3001,
         host: "0.0.0.0",
         historyApiFallback: true
     },
@@ -113,7 +113,13 @@ module.exports = {
                     {loader: "css-loader"},
                     {loader: "sass-loader"}
                 ]
-            }
+            },
+            {
+                test: /\.m?js/,
+                resolve: {
+                    fullySpecified: false
+                }
+            },
         ]
     }
     //stats: "verbose"

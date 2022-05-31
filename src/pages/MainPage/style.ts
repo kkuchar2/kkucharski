@@ -1,68 +1,30 @@
 import styled from "styled-components";
 
 export const StyledMainPage = styled.div`
-  height: 200px;
-  width: 100%;
+  min-width: 0;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-`;
-
-export const StyledKeyboardImage = styled.img`
-  width: 100%;
-  opacity: 0.9;
-
-  @media (max-width: 600px) {
-    width: 200%;
-  }
-`
-
-export const StyledBottomSection = styled.div`
-  width: 100%;
-  box-sizing: border-box;
-  display: flex;
   align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  margin-top: 40px;
+  overflow-x: hidden;
 `;
 
 export const StyledContent = styled.div`
-  width: 100%;
   box-sizing: border-box;
   display: flex;
+  width: 1200px;
+  padding: 20px;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  margin-top: 150px;
+  margin-top: 50px;
 
-  @media (max-width: 600px) {
-    margin-top: 50px;
-  }
-`;
-
-export const StyledTopSection = styled.div`
-  width: 50%;
-  max-width: 1500px;
-  min-width: 600px;
-  box-sizing: border-box;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  overflow-x: hidden;
-  margin-bottom: 50px;
-
-  @media (max-width: 600px) {
+  @media (max-width: 1200px) {
     width: 100%;
-    min-width: 100%;
-    padding-left: 30px;
-    padding-right: 30px;
-    margin-bottom: 0;
   }
 `;
 
-export const StyledTitleSection = styled.div`
+export const StyledTitle = styled.div`
   width: 100%;
   box-sizing: border-box;
   display: flex;
@@ -73,149 +35,80 @@ export const StyledTitleSection = styled.div`
   color: #ff9100;
   font-size: clamp(1.8rem, 3.2vw, 2rem);
   font-weight: 600;
-  
-  @media (max-width: 600px) {
-    margin-bottom: 20px;
-  }
 `;
 
-export const StyledLinkSection = styled.div`
-  width: 100%;
+export const StyledLinks = styled.div`
+  display: grid;
+  gap: 20px 20px;
   box-sizing: border-box;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  height: 100px;
-`;
-
-export const StyledLinkTopSection = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: row;
-  margin-top: 20px;
-`;
-
-export const StyledLinkBottomSection = styled.div`
-  margin-top: 30px;
-`;
-
-
-export const AboutMe = styled.div`
-  max-width: 800px;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  width: 100%;
 `;
 
 export const StyledDescriptionsSection = styled.div`
   margin-top: 100px;
-  width: 80%;
+  width: 100%;
   box-sizing: border-box;
   display: flex;
   align-items: flex-start;
   justify-content: center;
   flex-direction: column;
+  min-width: 0;
+`;
 
-  @media (max-width: 600px) {
-    margin-top: 50px;
+export const StyledWorkEducation = styled.div`
+  margin-top: 100px;
+  padding-top: 20px;
+  display: grid;
+  box-sizing: border-box;
+  width: 100%;
+  margin-bottom: 50px;
+  grid-template-columns: 2fr 1fr;
+
+  @media (max-width: 840px) {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   }
+
+  @media (max-width: 400px) {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+`;
+
+export const StyledLinkWrapper = styled.a`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #bebebe;
+  text-decoration: none;
+  font-size: 0.9em;
+  font-weight: 600;
+  flex-direction: column;
 `;
 
 export const StyledLink = styled.a`
-  text-decoration: none;
-  background: #202020;
-  width: 100px;
+  width: 150px;
+  height: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 150px;
-  color: white;
+  color: #e6e6e6;
+  text-decoration: none;
+  background: #2e2e2e;
   font-size: 0.9em;
   font-weight: 600;
-  margin-left: 30px;
-  margin-right: 30px;
   flex-direction: column;
 
-  @media (max-width: 600px) {
-    margin-left: 10px;
-    margin-right: 10px;
-  }
-`;
-
-export const StyledResumeLink = styled.a`
-  text-decoration: none;
-  background: none;
-  width: 100px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 150px;
-  color: white;
-  font-size: 1.2em;
-  font-weight: 600;
-  flex-direction: column;
-
-  @media (max-width: 600px) {
-    margin-left: 10px;
-    margin-right: 10px;
+  &:hover {
+    background: #3c3c3c;
   }
 `;
 
 export const helloTextTheme = {
-    textColor: "#a9a9a9",
+    textColor: "#e5e5e5",
     fontSize: "0.8em",
     textAlign: "left",
-    fontWeight: 600,
+    fontWeight: 500,
     margin: "0px 0px 0px 0px"
 };
 
-export const StyledSectionGrid = styled.div`
-  display: grid;
-  grid-gap: 40px;
-
-  @media (min-width: 1200px) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  @media (min-width: 1800px) {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  @media (max-width: 600px) {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-`;
-
-export const nameTextTheme = {
-    textColor: "#ff9100",
-    fontSize: "2.5em",
-    textAlign: "left",
-    fontWeight: 600,
-    margin: "10px 0px 0px 5px"
-};
-
-export const aboutTextTheme = {
-    textColor: "#8d8d8d",
-    fontSize: "1.2em",
-    textAlign: "left",
-    fontWeight: 600,
-    margin: "10px 0px 0px 5px"
-};
-
-export const aboutTextTheme2 = {
-    textColor: "#8d8d8d",
-    fontSize: "1.2em",
-    textAlign: "left",
-    fontWeight: 600,
-    margin: "20px 0px 0px 5px"
-};
-
-export const buttonTextTheme = {
-    textColor: "#8d8d8d",
-    fontSize: "1em",
-    lineHeight: '40px',
-    textAlign: 'center',
-    fontWeight: 600,
-    margin: "0px 0px 0px 0px"
-};
