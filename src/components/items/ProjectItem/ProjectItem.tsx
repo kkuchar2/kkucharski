@@ -1,22 +1,22 @@
-import React, {useCallback, useMemo} from "react"
+import React, {useMemo} from "react"
 import {
     linkNameTheme,
-    projectNameTheme,
     projectDescriptionTextTheme,
+    projectNameTheme,
     projectStackTheme,
     StyledDescription,
     StyledFirstLink,
     StyledLink,
     StyledLinks,
-    StyledPersonalProjectItem, StyledPersonalProjectItemWrapper
+    StyledPersonalProjectItem,
+    StyledPersonalProjectItemWrapper
 } from "./style"
 import {Text} from "kuchkr-react-component-library";
-
 import {ProjectData} from "../../../data";
 
 export const ProjectItem = (props: ProjectData) => {
 
-    const {name, stack, description, github, website, npm} = props;
+    const { name, stack, description, github, website, npm } = props;
 
     const renderNPMLinkButton = useMemo(() => {
         if (!npm) {
@@ -24,7 +24,7 @@ export const ProjectItem = (props: ProjectData) => {
         }
 
         return <StyledLink href={npm}>
-            <img src={'/assets/images/npm_icon.svg'} alt={'npm_icon'} width={40} style={{marginTop: 2}}/>
+            <img src={'/images/npm_icon.svg'} alt={'npm_icon'} width={40} style={{ marginTop: 2 }}/>
         </StyledLink>
     }, [npm]);
 
@@ -48,7 +48,7 @@ export const ProjectItem = (props: ProjectData) => {
 
             <StyledLinks>
                 <StyledFirstLink href={github}>
-                    <img src={'/assets/images/github_logo_wide.svg'} alt={'github_logo_wide'} width={70}/>
+                    <img src={'/images/github_logo_wide.svg'} alt={'github_logo_wide'} width={70}/>
                 </StyledFirstLink>
                 {renderWebsiteLinkButton}
                 {renderNPMLinkButton}

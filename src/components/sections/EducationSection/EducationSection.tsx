@@ -2,8 +2,8 @@ import React, {useMemo} from 'react';
 import {StyledChildren, StyledEducationSection} from "./style"
 import {Text} from "kuchkr-react-component-library";
 import {StyledTitle, titleTextTheme} from '../common.styles';
-import {DataItems} from "components/sections/common.types";
-import { EducationItem } from 'components/items/EducationItem/EducationItem';
+import {DataItems} from "../common.types";
+import {EducationItem} from "../../items/EducationItem/EducationItem";
 import {EducationData} from "../../../data";
 
 export const EducationSection = (props: DataItems<EducationData>) => {

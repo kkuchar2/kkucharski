@@ -21,7 +21,7 @@ export interface WorkDescriptionProps {
 
 export const WorkItem = (props: WorkDescriptionProps) => {
 
-    const {company, title, startTime, endTime, description, marginTop = 0} = props;
+    const { company, title, startTime, endTime, description, marginTop = 0 } = props;
 
     return <StyledWorkItem>
         <StyledLeftSide>
