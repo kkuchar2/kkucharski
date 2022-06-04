@@ -1,7 +1,7 @@
 {
   "hosting": {
     "site": "kkucharski-com",
-    "public": "dist",
+    "public": "out",
     "ignore": [
       "firebase.json",
       "**/.*",
