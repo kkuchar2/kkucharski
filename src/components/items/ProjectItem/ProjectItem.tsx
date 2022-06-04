@@ -24,7 +24,7 @@ export const ProjectItem = (props: ProjectData) => {
         }
 
         return <StyledLink href={npm}>
-            <img src={'/images/npm_icon.svg'} alt={'npm_icon'} width={40} style={{ marginTop: 2 }}/>
+            <img src={'/images/npm_icon.svg'} alt={'npm_icon'} width={40} height={'auto'} style={{ marginTop: 2 }}/>
         </StyledLink>
     }, [npm]);
 
@@ -48,7 +48,7 @@ export const ProjectItem = (props: ProjectData) => {
 
             <StyledLinks>
                 <StyledFirstLink href={github}>
-                    <img src={'/images/github_logo_wide.svg'} alt={'github_logo_wide'} width={70}/>
+                    <img src={'/images/github_logo_wide.svg'} alt={'github_logo_wide'} width={70} height={'auto'}/>
                 </StyledFirstLink>
                 {renderWebsiteLinkButton}
                 {renderNPMLinkButton}

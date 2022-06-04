@@ -3,29 +3,32 @@ const filePath = "./package.json";
 const packageJson = JSON.parse(fs.readFileSync(filePath).toString());
 const nextBuildId = require("next-build-id")
 
-nextBuildId({ dir: __dirname }).then(id => {
-    packageJson.buildHash = id;
+const publicDirectory = './public';
+const metaFileName = "./public/meta.json";
 
+const start = async function () {
+    console.log("--------------------------------------------");
+    console.log("🏗️ Creating meta.json file with build hash");
+    console.log("--------------------------------------------");
+
+    const hash = await nextBuildId({dir: __dirname});
+
+    console.log(`Build hash (last commit hash): ${hash}`);
+
+    console.log(`\tWriting last build hash to package.json`);
+    packageJson.buildHash = hash;
     fs.writeFileSync(filePath, JSON.stringify(packageJson, null, 2));
 
-    const jsonData = {buildHash: packageJson.buildHash};
+    console.log(`\tWriting last build hash to ${metaFileName}`);
 
-    const jsonContent = JSON.stringify(jsonData);
-
-    console.log("Writing last build hash to build/meta.json");
-
-    const dir = './public';
-
-    if (!fs.existsSync(dir)) {
-        fs.mkdirSync(dir);
+    if (!fs.existsSync(publicDirectory)) {
+        fs.mkdirSync(publicDirectory);
     }
 
-    fs.writeFile("public/meta.json", jsonContent, "utf8", error => {
-        if (error) {
-            console.log("An error occurred while saving build date and time to meta.json");
-            return console.log(error);
-        }
+    return fs.writeFile(metaFileName, JSON.stringify({buildHash: hash}), "utf8", err => {});
+};
 
-        console.log("Latest build hash updated in meta.json file in /public");
-    });
+start().then(r => {
+    console.log("Done\n")
 });
+

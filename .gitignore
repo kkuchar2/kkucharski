@@ -29,3 +29,6 @@ yarn-error.log*
 
 # robots.txt
 /public/robots.txt
+
+# meta witch project hash
+public/meta.json

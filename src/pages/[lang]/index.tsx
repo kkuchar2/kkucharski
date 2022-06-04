@@ -3,9 +3,7 @@ import {WorkSection} from "components/sections/WorkSection/WorkSection";
 import {EducationSection} from "components/sections/EducationSection/EducationSection";
 import {ProjectsSection} from "components/sections/ProjectsSection/ProjectsSection";
 
-import data from '../../../public/meta.json';
-
-console.log('Data: ', data);
+import meta from '../../../public/meta.json';
 
 import {
     helloTextTheme,
@@ -62,7 +60,7 @@ const Home = ({language}) => {
                 </StyledDescriptionsSection>
             </StyledContent>
         </StyledHome>
-        <StyledBuildHash>{data.buildHash}</StyledBuildHash>
+        <StyledBuildHash>{meta.buildHash}</StyledBuildHash>
     </Layout>;
 }
 

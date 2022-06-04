@@ -14,7 +14,7 @@ const Index = () => {
                     console.log(`Set to language '${lang}'`);
                 });
         }
-    }, []);
+    }, [router]);
 
     return null
 }
