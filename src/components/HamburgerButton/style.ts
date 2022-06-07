@@ -12,8 +12,6 @@ export const StyledHamburgerButton = styled.div<StyledHamburgerButtonProps>`
 
   @media (max-width: 768px) {
     position: ${props => props.navbarOpened ? 'fixed' : 'absolute'};
-    top: ${props => props.navbarOpened ? '80px' : '8px'};
-    transition: top 0.25s ease-out;
   }
 
   &:hover {

@@ -19,7 +19,7 @@ export const StyledNavBar = styled.div<StyledNavbarProps>`
   background: rgba(33, 33, 33, 0.85);
   z-index: 5;
   top: ${props => props.visible ? '0' : '-80px'};
-  transition: top 0.25s ease-out;
+  transition: all 0.25s ease-out;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 
   @media (min-width: 768px) {
@@ -28,7 +28,7 @@ export const StyledNavBar = styled.div<StyledNavbarProps>`
 
   @media (max-width: 768px) {
     backdrop-filter: ${props => props.visible ? 'blur(10px)' : 'none'};
-    top: ${props => props.navbarOpened || !props.visible ? '-80px' : '0'};
+    background: ${props => props.navbarOpened ? 'transparent' : 'rgba(33, 33, 33, 0.85)'};
   }
 `;
 
@@ -48,7 +48,7 @@ export const NavbarItems = styled.div<StyledNavbarItemProps>`
     background: rgba(35, 35, 35, 0.87);
     position: fixed;
     height: 100vh;
-    top: 80px;
+    top: 0;
     right: ${props => props.navbarOpened ? '0' : '-100%'};
     flex-direction: column;
     width: min(75vw, 400px);
