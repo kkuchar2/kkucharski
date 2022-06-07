@@ -1,9 +1,10 @@
 import i18next from 'i18next';
 
-import {languages} from '../i18n';
+import {languages} from '../../i18n';
+
+import {StyledLanguageLinks, StyledLinkButton} from "./style";
 
 import LanguageLink from "components/LanguageLink";
-import {StyledLanguageLinks, StyledLinkButton} from "styles/LanguageMenu.style";
 
 const LanguageSelector = () => {
     const { t } = i18next;
