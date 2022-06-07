@@ -15,13 +15,19 @@ export const StyledNavBar = styled.div<StyledNavbarProps>`
   flex-direction: row;
   position: fixed;
   left: 0;
-  background: #212121;
+  backdrop-filter: blur(20px);
+  background: rgba(33, 33, 33, 0.85);
   z-index: 5;
   top: ${props => props.visible ? '0' : '-80px'};
   transition: top 0.25s ease-out;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 
+  @media (min-width: 768px) {
+    top: ${props => props.navbarOpened || !props.visible ? '-80px' : '0'};
+  }
+
   @media (max-width: 768px) {
+    backdrop-filter: ${props => props.visible ? 'blur(10px)' : 'none'};
     top: ${props => props.navbarOpened || !props.visible ? '-80px' : '0'};
   }
 `;
@@ -35,15 +41,15 @@ export const NavbarItems = styled.div<StyledNavbarItemProps>`
   flex-direction: row;
   align-items: center;
   justify-content: flex-end;
-  height: 100%;
 
   // Mobile 
   @media (max-width: 768px) {
     transition: right 0.25s ease-out;
-    background: #232323;
+    background: rgba(35, 35, 35, 0.87);
     position: fixed;
+    height: 100vh;
+    top: 80px;
     right: ${props => props.navbarOpened ? '0' : '-100%'};
-    top: 0;
     flex-direction: column;
     width: min(75vw, 400px);
     justify-content: center;
