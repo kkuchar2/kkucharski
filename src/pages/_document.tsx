@@ -1,11 +1,10 @@
-import Document from 'next/document'
-
+import Document from 'next/document';
 import {ServerStyleSheet} from "styled-components";
 
 class MyDocument extends Document {
     static async getInitialProps(ctx) {
-        const originalRenderPage = ctx.renderPage
-        const sheet = new ServerStyleSheet()
+        const originalRenderPage = ctx.renderPage;
+        const sheet = new ServerStyleSheet();
 
         // Run the React rendering logic synchronously
         ctx.renderPage = () =>
@@ -14,10 +13,10 @@ class MyDocument extends Document {
                 enhanceApp: (App) => (props) => sheet.collectStyles(<App {...props} />),
                 // Useful for wrapping in a per-page basis
                 enhanceComponent: (Component) => Component,
-            })
+            });
 
         // Run the parent `getInitialProps`, it now includes the custom `renderPage`
-        const initialProps = await Document.getInitialProps(ctx)
+        const initialProps = await Document.getInitialProps(ctx);
 
         return {
             ...initialProps,
@@ -27,8 +26,8 @@ class MyDocument extends Document {
                     {sheet.getStyleElement()}
                 </>,
             ],
-        }
+        };
     }
 }
 
-export default MyDocument
+export default MyDocument;

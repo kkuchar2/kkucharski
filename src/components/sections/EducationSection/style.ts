@@ -8,14 +8,8 @@ export const StyledChildren = styled.div`
 `;
 
 export const StyledEducationSection = styled.div`
-  background: rgb(49, 49, 49);
   box-sizing: border-box;
-  padding: 20px 20px 20px 40px;
   width: 100%;
   display: grid;
   grid-template-rows: 80px auto;
-
-  @media (max-width: 650px) {
-    padding: 40px 20px 20px;
-  }
 `;

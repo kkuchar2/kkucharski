@@ -1,10 +1,13 @@
 import React, {useMemo} from 'react';
-import {StyledChildren, StyledEducationSection} from "./style"
+
 import {Text} from "kuchkr-react-component-library";
+
+import {EducationData} from "../../../data";
+import {EducationItem} from "../../items/EducationItem/EducationItem";
 import {StyledTitle, titleTextTheme} from '../common.styles';
 import {DataItems} from "../common.types";
-import {EducationItem} from "../../items/EducationItem/EducationItem";
-import {EducationData} from "../../../data";
+
+import {StyledChildren, StyledEducationSection} from "./style";
 
 export const EducationSection = (props: DataItems<EducationData>) => {
 
@@ -12,8 +15,8 @@ export const EducationSection = (props: DataItems<EducationData>) => {
 
     const renderItems = useMemo(() => {
         return items.map((item, index) => {
-            return <EducationItem key={index} {...item}/>
-        })
+            return <EducationItem key={index} {...item}/>;
+        });
     }, [items]);
 
     return <StyledEducationSection>
@@ -23,5 +26,5 @@ export const EducationSection = (props: DataItems<EducationData>) => {
         <StyledChildren>
             {renderItems}
         </StyledChildren>
-    </StyledEducationSection>
-}
+    </StyledEducationSection>;
+};

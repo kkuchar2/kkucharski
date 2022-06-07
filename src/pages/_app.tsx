@@ -1,46 +1,53 @@
-import '../i18n'
-import { useEffect, useState } from 'react'
-import i18next from 'i18next'
+import '../i18n';
+import {useEffect, useState} from 'react';
 
-import { defaultLanguage, languages } from '../i18n'
-import { useRouter } from 'next/router'
+import i18next from 'i18next';
+import {DefaultSeo} from "next-seo";
+import {useRouter} from 'next/router';
 import {createGlobalStyle} from "styled-components";
+
+import SEO from '../../next-seo.config';
+import {AppWrapper} from "../context/state";
+import {defaultLanguage, languages} from '../i18n';
+import "../styles/globals.css";
 
 const GlobalStyles = createGlobalStyle`
   html, body {
     padding: 0;
     margin: 0;
     background: #353535;
-    font-family: poppins, sans-serif;
+    font-family: poppins, serif;
     font-weight: 500;
     font-style: normal;
   }
 `;
 
 const App = function ({ Component, pageProps }) {
-  const router = useRouter()
-  const { asPath, query } = router
+    const router = useRouter();
+    const { asPath, query } = router;
 
-  // Detect current language
-  const slug = asPath.split('/')[1]
-  const langSlug = languages.includes(slug) && slug
-  const language = query.lang || langSlug || defaultLanguage
+    // Detect current language
+    const slug = asPath.split('/')[1];
+    const langSlug = languages.includes(slug) && slug;
+    const language = query.lang || langSlug || defaultLanguage;
 
-  const [clientLanguage, setClientLanguage] = useState(language)
+    const [clientLanguage, setClientLanguage] = useState(language);
 
-  useEffect(() => {
-    setClientLanguage(language)
-  }, [language])
+    useEffect(() => {
+        setClientLanguage(language);
+    }, [language]);
 
-  // Don't trigger `i18next.changeLanguage()` on root folder, use `router` to redirect to the specific language
-  if (asPath !== '/') {
-    i18next.changeLanguage(clientLanguage as string).then(r => {})
-  }
+    // Don't trigger `i18next.changeLanguage()` on root folder, use `router` to redirect to the specific language
+    if (asPath !== '/') {
+        i18next.changeLanguage(clientLanguage as string).then(r => {
+        });
+    }
 
-  return <>
-      <GlobalStyles />
-      <Component {...pageProps} />
-    </>;
-}
+    return <AppWrapper>
+        <GlobalStyles/>
+        <DefaultSeo {...SEO} />
+        <Component {...pageProps} />
+    </AppWrapper>;
+};
 
-export default App
+export default App;

@@ -1,6 +1,7 @@
 export interface ProjectData {
     name: string;
-    stack: string;
+    icon?: string;
+    stack: string[];
     description: string;
     npm?: string;
     github: string;
@@ -10,7 +11,7 @@ export interface ProjectData {
 export const projects: ProjectData[] = [
     {
         name: 'kuchkr-react-component-library',
-        stack: 'React, TypeScript, RollupJS, StoryBook, Firebase',
+        stack: ['React', 'TypeScript', 'RollupJS', 'StoryBook', 'Firebase'],
         description: 'Small React components library for personal usage',
         npm: 'https://www.npmjs.com/package/kuchkr-react-component-library',
         github: 'https://github.com/kkuchar2/kuchkr-react-component-library',
@@ -18,40 +19,41 @@ export const projects: ProjectData[] = [
     },
     {
         name: 'openglengine',
-        stack: 'C++, CMake',
+        stack: ['C++', 'CMake'],
         description: 'Project as integration of OpenGL rendering system into graphical user interface. Used for testing, learning and experimentation.',
         github: 'https://github.com/kkuchar2/openglengine',
     },
     {
         name: 'react-sorting-visualiser',
-        stack: 'ReactJS, TypeScript, Webpack, webworkers, ThreeJS, Firebase',
+        stack: ['ReactJS', 'TypeScript', 'Webpack', 'ThreeJS', 'Firebase'],
         description: 'Realtime sorting algorithm visualiser',
         github: 'https://github.com/kkuchar2/react-sorting-visualizer',
         website: 'https://sortingvis.kkucharski.com/'
     },
     {
         name: 'react-django-administration',
-        stack: 'ReactJS, TypeScript, Webpack, Firebase',
+        stack: ['ReactJS', 'TypeScript', 'Webpack', 'Firebase'],
         description: 'React frontend for Django server to manage accounts and tables',
         github: 'https://github.com/kkuchar2/react-django-administration'
     },
     {
         name: 'axios-client-wrapper',
-        stack: 'ReactJS, TypeScript, RollupJS, StoryBook',
+        stack: ['ReactJS', 'TypeScript', 'RollupJS', 'StoryBook'],
         description: 'Small library for personal usage wrapping axios library with Redux functionality.',
         npm: 'https://www.npmjs.com/package/axios-client-wrapper',
         github: 'https://github.com/kkuchar2/axios-client-wrapper',
     },
     {
         name: 'docker-django-backend',
-        stack: 'Docker, docker-compose, Django, MySQL, DigitalOcean, Google Cloud Storage',
+        stack: ['Docker', 'docker-compose', 'Django', 'MySQL', 'DigitalOcean', 'Google Cloud Storage'],
         description: 'Django server & MySQL database in Docker - API and data source for all of my future projects',
         github: 'https://github.com/kkuchar2/kuchkr-react-component-library',
     },
     {
         name: 'libmpeg7',
-        stack: 'C++, C, Python, Java, JNI',
-        description: '🎓 Engineers degree project: Library with implementation of MPEG-7 digital image descriptors calculation and comparison algorithms with Python and Java wrappers',
+        icon: '/svg/graduation.svg',
+        stack: ['C++', 'C', 'Python', 'Java', 'JNI'],
+        description: 'Engineers degree project: Library with implementation of MPEG-7 digital image descriptors calculation and comparison algorithms with Python and Java wrappers',
         github: 'https://github.com/kkuchar2/libmpeg7',
     }
 ];
@@ -79,7 +81,7 @@ export const education: EducationData[] = [
         startTime: '2015',
         endTime: '2017'
     }
-]
+];
 
 export interface WorkData {
     company: string;
@@ -104,4 +106,10 @@ export const work: WorkData[] = [
         startTime: 'January 2018',
         endTime: 'April 2020'
     }
-]
+];
+
+export interface NavBarData {
+    name: string;
+}
+
+export const navbarData: NavBarData[] = [];

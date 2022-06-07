@@ -1,70 +1,91 @@
 import styled from "styled-components";
 
-export const StyledHome = styled.div`
+interface NavbarOpenedProps {
+    opened: boolean;
+}
+
+export const StyledHome = styled.div<NavbarOpenedProps>`
   min-width: 0;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
   align-items: center;
   overflow-x: hidden;
+  background: ${props => props.opened ? '#212121' : 'none'};
+  transition: background 0.25s ease-out;
 `;
 
-export const StyledContent = styled.div`
+export const StyledContent = styled.div<NavbarOpenedProps>`
   box-sizing: border-box;
   display: flex;
-  width: 1200px;
-  align-items: center;
+  width: 1300px;
   justify-content: center;
   flex-direction: column;
-  
-  @media (max-width: 1200px) {
+  padding-left: 40px;
+  padding-right: 40px;
+  filter: ${props => props.opened ? 'blur(8px)' : 'none'};
+  transition: filter 0.25s ease-out;
+
+  @media (max-width: 1300px) {
     width: 100%;
+  }
+
+  @media (max-width: 600px) {
+    width: 100%;
+    padding: 0 20px 10px;
   }
 `;
 
-export const StyledTitle = styled.div`
-  width: 100%;
-  padding: 20px;
+export const StyledTitleBox = styled.div`
+  max-width: 645px;
+  box-sizing: border-box;
+  margin-bottom: 100px;
+  color: #ffffff;
+  font-weight: 600;
+  margin-top: 150px;
+
+  @media (max-width: 768px) {
+    margin-bottom: 50px;
+  }
+`;
+
+export const StyledTitle = styled.h1`
   box-sizing: border-box;
   display: flex;
   align-items: flex-start;
   justify-content: center;
   flex-direction: column;
-  margin-bottom: 100px;
-  color: #ff9100;
-  font-size: clamp(1.8rem, 3.2vw, 2rem);
+  color: #ffffff;
   font-weight: 600;
-  margin-top: 150px;
-`;
+  font-size: 4.5em;
+  font-family: serif;
 
-export const StyledLinks = styled.div`
-  padding: 20px;
-  display: grid;
-  gap: 20px 20px;
-  box-sizing: border-box;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  width: 100%;
+  @media (max-width: 1050px) {
+    font-size: 3.3em;
+  }
+
+  @media (max-width: 450px) {
+    font-size: 3.2em;
+  }
 `;
 
 export const StyledDescriptionsSection = styled.div`
-  padding: 20px;
   margin-top: 100px;
   width: 100%;
   box-sizing: border-box;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  flex-direction: column;
   min-width: 0;
+
+  @media (max-width: 768px) {
+    margin-top: 0;
+  }
 `;
 
 export const StyledWorkEducation = styled.div`
-  margin-top: 100px;
-  padding-top: 20px;
   display: grid;
+  gap: 60px;
   box-sizing: border-box;
   width: 100%;
-  margin-bottom: 50px;
+  margin-bottom: 100px;
   grid-template-columns: 2fr 1fr;
 
   @media (max-width: 840px) {
@@ -76,48 +97,9 @@ export const StyledWorkEducation = styled.div`
   }
 `;
 
-export const StyledLinkWrapper = styled.div`
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #bebebe;
-  text-decoration: none;
-  font-size: 0.9em;
-  font-weight: 600;
-  flex-direction: column;
-`;
-
-export const StyledLink = styled.a`
-  width: 150px;
-  height: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #e6e6e6;
-  text-decoration: none;
-  background: #2e2e2e;
-  font-size: 0.9em;
-  font-weight: 600;
-  flex-direction: column;
-
-  &:hover {
-    background: #3c3c3c;
-  }
-`;
-
-export const helloTextTheme = {
-    textColor: "#e5e5e5",
-    fontSize: "0.8em",
-    textAlign: "left",
-    fontWeight: 500,
-    margin: "0px 0px 0px 0px"
-};
-
 export const StyledBuildHash = styled.div`
   font-size: 0.8em;
   color: rgba(229, 229, 229, 0.3);
   text-align: left;
   font-weight: 500;
 `;
-

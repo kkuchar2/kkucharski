@@ -4,23 +4,23 @@ export const StyledEducationItem = styled.div`
   display: grid;
   box-sizing: border-box;
   gap: 10px 10px;
-`
+`;
 
 export const StyledLeftSide = styled.div`
   display: flex;
   flex: 1 0;
   min-width: 200px;
-`
+`;
 
 export const StyledRightSide = styled.div`
   display: flex;
   flex-direction: column;
   min-width: 0;
-`
+`;
 
 export const schoolTextTheme = {
-    textColor: "#8eff74",
-    fontSize: "1.0em",
+    textColor: "#26d05c",
+    fontSize: "1.2em",
     textAlign: 'left',
     fontWeight: 600,
     margin: "0px 0px 0px 0px"

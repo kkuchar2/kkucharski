@@ -1,4 +1,7 @@
-import React from "react"
+import React from "react";
+
+import {Text} from "kuchkr-react-component-library";
+
 import {
     companyTextTheme,
     jobDescriptionTextTheme,
@@ -7,8 +10,7 @@ import {
     StyledLeftSide,
     StyledRightSide,
     StyledWorkItem,
-} from "./style"
-import {Text} from "kuchkr-react-component-library";
+} from "./style";
 
 export interface WorkDescriptionProps {
     company: string;
@@ -16,12 +18,11 @@ export interface WorkDescriptionProps {
     startTime: string;
     endTime: string;
     description: string;
-    marginTop?: number;
 }
 
 export const WorkItem = (props: WorkDescriptionProps) => {
 
-    const { company, title, startTime, endTime, description, marginTop = 0 } = props;
+    const { company, title, startTime, endTime, description } = props;
 
     return <StyledWorkItem>
         <StyledLeftSide>
@@ -33,5 +34,5 @@ export const WorkItem = (props: WorkDescriptionProps) => {
             <Text theme={jobTitleTextTheme} text={title}/>
             <Text theme={jobDescriptionTextTheme} text={description}/>
         </StyledRightSide>
-    </StyledWorkItem>
-}
+    </StyledWorkItem>;
+};

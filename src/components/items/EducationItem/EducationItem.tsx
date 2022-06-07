@@ -1,4 +1,7 @@
-import React from "react"
+import React from "react";
+
+import {Text} from "kuchkr-react-component-library";
+
 import {
     descriptionTextTheme,
     eductionTitleTextTheme,
@@ -7,8 +10,7 @@ import {
     StyledLeftSide,
     StyledRightSide,
     timeTextTheme,
-} from "./style"
-import {Text} from "kuchkr-react-component-library";
+} from "./style";
 
 export interface EducationDescriptionItemProps {
     school: string;
@@ -33,5 +35,5 @@ export const EducationItem = (props: EducationDescriptionItemProps) => {
             <Text theme={eductionTitleTextTheme} text={title}/>
             <Text theme={descriptionTextTheme} text={description}/>
         </StyledRightSide>
-    </StyledEducationItem>
-}
+    </StyledEducationItem>;
+};

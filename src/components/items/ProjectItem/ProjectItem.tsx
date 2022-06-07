@@ -1,58 +1,51 @@
-import React, {useMemo} from "react"
-import {
-    linkNameTheme,
-    projectDescriptionTextTheme,
-    projectNameTheme,
-    projectStackTheme,
-    StyledDescription,
-    StyledFirstLink,
-    StyledLink,
-    StyledLinks,
-    StyledPersonalProjectItem,
-    StyledPersonalProjectItemWrapper
-} from "./style"
-import {Text} from "kuchkr-react-component-library";
+import React, {useMemo} from "react";
+
 import {ProjectData} from "../../../data";
 
+import {
+    ProjectContent,
+    ProjectDescription,
+    ProjectStacks,
+    ProjectTitle,
+    StyledLinks,
+    StyledProjectItem,
+    StyledProjectStack
+} from "./style";
+
+import {SvgIcon} from "components/SvgIcon/SvgIcon";
+import {SvgIconLink} from "components/SvgIconLink/SvgIconLink";
+
+const c = '#ffbe69';
 export const ProjectItem = (props: ProjectData) => {
 
-    const { name, stack, description, github, website, npm } = props;
+    const { name, icon, stack, description, github, website, npm } = props;
 
-    const renderNPMLinkButton = useMemo(() => {
-        if (!npm) {
-            return null;
-        }
+    const renderProjectStacks = useMemo(() => {
+        return stack.map((stack, index) => <StyledProjectStack key={index}>{stack}</StyledProjectStack>);
+    }, [stack]);
 
-        return <StyledLink href={npm}>
-            <img src={'/images/npm_icon.svg'} alt={'npm_icon'} width={40} height={'auto'} style={{ marginTop: 2 }}/>
-        </StyledLink>
-    }, [npm]);
-
-    const renderWebsiteLinkButton = useMemo(() => {
-        if (!website) {
-            return null;
-        }
-
-        return <StyledLink href={website}>
-            <Text theme={linkNameTheme} text={'Website'}/>
-        </StyledLink>
-    }, [website]);
-
-    return <StyledPersonalProjectItemWrapper>
-        <StyledPersonalProjectItem>
-            <StyledDescription>
-                <Text theme={projectNameTheme} text={name}/>
-                <Text theme={projectStackTheme} text={stack}/>
-                <Text theme={projectDescriptionTextTheme} text={description}/>
-            </StyledDescription>
-
-            <StyledLinks>
-                <StyledFirstLink href={github}>
-                    <img src={'/images/github_logo_wide.svg'} alt={'github_logo_wide'} width={70} height={'auto'}/>
-                </StyledFirstLink>
-                {renderWebsiteLinkButton}
-                {renderNPMLinkButton}
-            </StyledLinks>
-        </StyledPersonalProjectItem>
-    </StyledPersonalProjectItemWrapper>
-}
+    return <StyledProjectItem>
+        <SvgIcon
+            className={`scale-150 absolute top-[18px] left-[25px] text-[#ffbe69]`}
+            icon={icon ? icon : '/svg/folder.svg'}/>
+        <StyledLinks>
+            <SvgIconLink
+                className={'fill-[#cecece] hover:fill-[#ffffff]'}
+                href={github}
+                target={'_blank'}
+                icon={'/svg/github.svg'}/>
+            <SvgIconLink
+                className={'text-[#cecece] hover:text-[#ffffff] my-[-2px]'}
+                href={website}
+                target={'_blank'}
+                icon={'/svg/external_link.svg'}/>
+        </StyledLinks>
+        <ProjectContent>
+            <ProjectTitle>{name}</ProjectTitle>
+            <ProjectDescription>{description}</ProjectDescription>
+            <ProjectStacks>
+                {renderProjectStacks}
+            </ProjectStacks>
+        </ProjectContent>
+    </StyledProjectItem>;
+};

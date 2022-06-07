@@ -1,10 +1,13 @@
 import React, {useMemo} from 'react';
-import {StyledChildren, StyledWorkSection} from "./style"
+
 import {Text} from "kuchkr-react-component-library";
-import {StyledTitle, titleTextTheme} from '../common.styles';
-import {WorkItem} from "../../items/WorkItem/WorkItem";
-import {DataItems} from "../common.types";
+
 import {WorkData} from "../../../data";
+import {WorkItem} from "../../items/WorkItem/WorkItem";
+import {StyledTitle, titleTextTheme} from '../common.styles';
+import {DataItems} from "../common.types";
+
+import {StyledChildren, StyledWorkSection} from "./style";
 
 export const WorkSection = (props: DataItems<WorkData>) => {
 
@@ -12,8 +15,8 @@ export const WorkSection = (props: DataItems<WorkData>) => {
 
     const renderItems = useMemo(() => {
         return items.map((item, index) => {
-            return <WorkItem key={index} {...item}/>
-        })
+            return <WorkItem key={index} {...item}/>;
+        });
     }, [items]);
 
     return <StyledWorkSection>
@@ -23,5 +26,5 @@ export const WorkSection = (props: DataItems<WorkData>) => {
         <StyledChildren>
             {renderItems}
         </StyledChildren>
-    </StyledWorkSection>
-}
+    </StyledWorkSection>;
+};

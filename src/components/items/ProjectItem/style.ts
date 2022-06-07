@@ -1,91 +1,84 @@
 import styled from "styled-components";
 
-export const StyledPersonalProjectItemWrapper = styled.div`
-`
-
-export const StyledPersonalProjectItem = styled.div`
-  background: rgb(49, 49, 49);
+export const StyledProjectItem = styled.div`
+  background: rgba(255, 255, 255, 0.02);
   display: flex;
   flex-direction: column;
-  padding: 20px;
+  padding: 20px 20px 0;
+  border-radius: 5px;
   box-sizing: border-box;
   height: auto;
-`
+  transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+  transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1) 0s, opacity 0.25s cubic-bezier(0.645, 0.045, 0.355, 1) 0s, transform 0.25s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
 
-export const StyledDescription = styled.div`
-  display: grid;
-  grid-template-rows: 30px 70px auto;
-  margin-bottom: 20px;
-`
-export const StyledFirstLink = styled.a`
-  text-decoration: none;
-  background: rgba(0, 0, 0, 0.14);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 40px;
-  font-size: 0.9em;
-  font-weight: 600;
-  padding-left: 20px;
-  padding-right: 20px;
+  @media (min-width: 768px) {
+    &:hover {
+      transform: translateY(-7px);
 
-  &:hover {
-    background: #3d3d3d;
+      > * h1 {
+        color: #ff9900;
+      }
+    }
   }
 `;
 
-export const StyledLink = styled.a`
-  text-decoration: none;
-  background: rgba(0, 0, 0, 0.14);
+export const ProjectContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  height: 250px;
+  grid-template-rows: 50px 70px 130px;
+  margin-bottom: 20px;
+`;
+
+export const ProjectTitle = styled.h1`
+  color: #f6f6f6;
+  font-weight: 600;
+  font-size: 20px;
+  font-family: "Calibre", sans-serif;
+  margin-top: 0;
+`;
+
+export const ProjectDescription = styled.div`
+  color: #ccd6f6;
+  font-weight: 400;
+  font-size: 15px;
+  font-family: "Calibre", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  max-width: 85%;
+  padding-top: 10px;
+  flex: 1 0;
+`;
+
+export const ProjectStacks = styled.div`
+  color: #bebebe;
+  font-weight: 300;
+  font-size: 15px;
+  font-family: "Calibre", sans-serif;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: flex-start;
+  gap: 10px;
+`;
+
+export const StyledProjectStack = styled.div`
+  color: #959595;
+  font-weight: 300;
+  font-size: 14px;
+  font-family: "Calibre", sans-serif;
   display: flex;
   align-items: center;
-  justify-content: center;
-  height: 40px;
-  font-size: 0.9em;
-  font-weight: 600;
-  padding-left: 20px;
-  padding-right: 20px;
-
-  &:hover {
-    background: #3d3d3d;
-  }
+  justify-content: flex-start;
 `;
 
 export const StyledLinks = styled.div`
-  display: grid;
+  display: flex;
   box-sizing: border-box;
-  gap: 10px 10px;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-`
-
-export const projectNameTheme = {
-    textColor: "#ffb8b1",
-    fontSize: "1.0em",
-    textAlign: 'left',
-    fontWeight: 400,
-    margin: "0px 0px 0px 0px"
-};
-
-export const linkNameTheme = {
-    textColor: '#2fff00',
-    fontSize: "1em",
-    textAlign: 'left',
-    fontWeight: 400,
-    margin: "0px 0px 0px 0px"
-};
-
-export const projectStackTheme = {
-    textColor: "#8486e6",
-    fontSize: "0.9em",
-    textAlign: 'left',
-    fontWeight: 400,
-    margin: "0px 0px 0px 0px"
-};
-
-export const projectDescriptionTextTheme = {
-    textColor: '#c0c0c0',
-    fontSize: "0.9em",
-    textAlign: 'left',
-    fontWeight: 400,
-    margin: "0px 0px 0px 0px"
-};
+  justify-content: flex-end;
+  align-items: flex-start;
+  height: 50px;
+  gap: 20px;
+`;

@@ -11,7 +11,7 @@ export const StyledLinkButton = styled.button<StyledLinkButtonProps>`
   background: ${(props => props.enabled ? "rgba(0,0,0,0.29)" : "rgba(0,0,0,0.13)")};
   padding: 20px;
   border: none;
-  
+
   &:hover {
     background: ${(props => props.enabled ? "rgba(0,0,0,0.29)" : "rgba(0,0,0,0.13)")};
     cursor: pointer;

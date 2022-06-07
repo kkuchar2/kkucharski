@@ -1,43 +1,44 @@
-import Link from 'next/link'
-import {useRouter} from 'next/router'
-import {defaultLanguage, languages} from '../i18n'
+import Link from 'next/link';
+import {useRouter} from 'next/router';
+
+import {defaultLanguage, languages} from '../i18n';
 
 const LinkComponent = ({ children, locale, ...props }) => {
-    const router = useRouter()
-    const { pathname, query, asPath } = router
+    const router = useRouter();
+    const { pathname, query, asPath } = router;
 
     // Detect current language
-    const slug = asPath.split('/')[1]
-    const langSlug = languages.includes(slug) && slug
-    const language = query.lang || langSlug || defaultLanguage
+    const slug = asPath.split('/')[1];
+    const langSlug = languages.includes(slug) && slug;
+    const language = query.lang || langSlug || defaultLanguage;
 
-    let href = props.href || pathname
+    let href = props.href || pathname;
 
     if (locale) {
         if (props.href) {
-            href = `/${locale}${href}`
+            href = `/${locale}${href}`;
         }
         else {
-            href = pathname.replace('[lang]', locale)
+            href = pathname.replace('[lang]', locale);
         }
     }
     else {
         if (language) {
-            href = `/${language}${href}`
+            href = `/${language}${href}`;
         }
         else {
-            href = `/${href}`
+            href = `/${href}`;
         }
     }
 
     // Fix double slashes
-    href = href.replace(/([^:]\/)\/+/g, '$1').replace('//', '/')
+    href = href.replace(/([^:]\/)\/+/g, '$1').replace('//', '/');
 
     return (
         <Link href={href} passHref>
             {children}
         </Link>
-    )
-}
+    );
+};
 
-export default LinkComponent
+export default LinkComponent;

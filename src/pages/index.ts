@@ -1,6 +1,7 @@
-import i18next from 'i18next'
-import {useRouter} from 'next/router'
-import {useEffect} from 'react'
+import {useEffect} from 'react';
+
+import i18next from 'i18next';
+import {useRouter} from 'next/router';
 
 const Index = () => {
 
@@ -16,7 +17,7 @@ const Index = () => {
         }
     }, [router]);
 
-    return null
-}
+    return null;
+};
 
 export default Index;

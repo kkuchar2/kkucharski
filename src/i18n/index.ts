@@ -1,34 +1,35 @@
-import i18next from 'i18next'
-import LanguageDetector, {DetectorOptions} from 'i18next-browser-languagedetector'
-import {defaultLanguage, defaultNamespace, languages, namespaces,} from './config'
+import i18next from 'i18next';
+import LanguageDetector, {DetectorOptions} from 'i18next-browser-languagedetector';
 
-export {languages, defaultLanguage, namespaces, defaultNamespace}
+import {defaultLanguage, defaultNamespace, languages, namespaces, } from './config';
+
+export {languages, defaultLanguage, namespaces, defaultNamespace};
 
 // Load all locales
 const locales = Object.assign(
     {},
     ...Object.keys(languages).map((index) => {
-        const language = languages[index]
+        const language = languages[index];
 
         return {
             [language]: Object.assign(
                 {},
                 ...Object.keys(namespaces).map((index) => {
-                    const namespace = namespaces[index]
+                    const namespace = namespaces[index];
                     return {
                         [namespace]: require('../locales/' +
                             language +
                             '/' +
                             namespace +
                             '.json'),
-                    }
+                    };
                 })
             ),
-        }
+        };
     })
-)
+);
 
-const detectionOptions : DetectorOptions = {
+const detectionOptions: DetectorOptions = {
     // Order and from where user language should be detected
     order: [
         'querystring',
@@ -53,7 +54,7 @@ const detectionOptions : DetectorOptions = {
 
     // Optional set cookie options, reference: MDN Set-Cookie docs, https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie
     cookieOptions: { path: '/', sameSite: 'strict' },
-}
+};
 
 export default i18next.use(LanguageDetector).init({
     detection: detectionOptions,
@@ -63,14 +64,14 @@ export default i18next.use(LanguageDetector).init({
     defaultNS: defaultNamespace,
     returnObjects: true,
     debug: false
-})
+});
 
 export function getAllLanguageSlugs() {
     return languages.map((lang) => {
-        return { params: { lang: lang } }
-    })
+        return { params: { lang: lang } };
+    });
 }
 
 export function getLanguage(lang) {
-    return languages.includes(lang) ? lang : defaultLanguage
+    return languages.includes(lang) ? lang : defaultLanguage;
 }
