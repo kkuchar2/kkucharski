@@ -65,16 +65,16 @@ const NavBar = (props: DataItems<NavBarData>) => {
         if (!isMobile) {
             return null;
         }
-        return <HamburgerButton onClick={onHamburgerClick} navbarOpened={navbarOpened}/>;
-    }, [isMobile, navbarOpened]);
+        return <HamburgerButton onClick={onHamburgerClick} navbarOpened={navbarOpened} topNavbarVisible={show}/>;
+    }, [isMobile, navbarOpened, show]);
 
     return <StyledNavBar navbarOpened={navbarOpened} visible={show}>
-        <NavbarItems navbarOpened={navbarOpened}>
-            <NavbarBaseItems navbarOpened={navbarOpened}>
+        <NavbarItems navbarOpened={navbarOpened} visible={show}>
+            <NavbarBaseItems navbarOpened={navbarOpened} visible={show}>
                 {renderItems}
             </NavbarBaseItems>
 
-            <NavbarAdditionalItems navbarOpened={navbarOpened}>
+            <NavbarAdditionalItems navbarOpened={navbarOpened} visible={show}>
                 <ImageLink
                     href={"https://github.com/kkuchar2"}
                     target={'_blank'}

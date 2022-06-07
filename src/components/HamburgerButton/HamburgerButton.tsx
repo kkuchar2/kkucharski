@@ -3,13 +3,14 @@ import {StyledHamburgerButton, StyledHamburgerButtonInner} from "./style";
 interface HamburgerButtonProps {
     onClick: () => void;
     navbarOpened: boolean;
+    topNavbarVisible: boolean;
 }
 
 export const HamburgerButton = (props: HamburgerButtonProps) => {
 
-    const { onClick, navbarOpened } = props;
+    const { onClick, navbarOpened, topNavbarVisible } = props;
 
-    return <StyledHamburgerButton navbarOpened={navbarOpened} onClick={onClick}>
-        <StyledHamburgerButtonInner navbarOpened={navbarOpened}/>
+    return <StyledHamburgerButton navbarOpened={navbarOpened} topNavbarVisible={topNavbarVisible} onClick={onClick}>
+        <StyledHamburgerButtonInner navbarOpened={navbarOpened} topNavbarVisible={topNavbarVisible}/>
     </StyledHamburgerButton>;
 };

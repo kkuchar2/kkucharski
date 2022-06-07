@@ -27,16 +27,12 @@ export const StyledNavBar = styled.div<StyledNavbarProps>`
   }
 
   @media (max-width: 768px) {
-    backdrop-filter: ${props => props.visible ? 'blur(10px)' : 'none'};
+    backdrop-filter: ${props => props.visible && !props.navbarOpened ? 'blur(10px)' : 'blur(0)'};
     background: ${props => props.navbarOpened ? 'transparent' : 'rgba(33, 33, 33, 0.85)'};
   }
 `;
 
-interface StyledNavbarItemProps {
-    navbarOpened: boolean;
-}
-
-export const NavbarItems = styled.div<StyledNavbarItemProps>`
+export const NavbarItems = styled.div<StyledNavbarProps>`
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -48,7 +44,7 @@ export const NavbarItems = styled.div<StyledNavbarItemProps>`
     background: rgba(35, 35, 35, 0.87);
     position: fixed;
     height: 100vh;
-    top: 0;
+    top: ${props => props.visible ? '0' : '80px'};
     right: ${props => props.navbarOpened ? '0' : '-100%'};
     flex-direction: column;
     width: min(75vw, 400px);
@@ -56,7 +52,7 @@ export const NavbarItems = styled.div<StyledNavbarItemProps>`
   }
 `;
 
-export const NavbarBaseItems = styled.div<StyledNavbarItemProps>`
+export const NavbarBaseItems = styled.div<StyledNavbarProps>`
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -71,7 +67,7 @@ export const NavbarBaseItems = styled.div<StyledNavbarItemProps>`
   }
 `;
 
-export const NavbarAdditionalItems = styled.div<StyledNavbarItemProps>`
+export const NavbarAdditionalItems = styled.div<StyledNavbarProps>`
   display: flex;
   flex-direction: row;
   align-items: center;

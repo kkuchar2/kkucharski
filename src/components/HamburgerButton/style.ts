@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 interface StyledHamburgerButtonProps {
     navbarOpened: boolean;
+    topNavbarVisible: boolean;
 }
 
 export const StyledHamburgerButton = styled.div<StyledHamburgerButtonProps>`
@@ -12,6 +13,13 @@ export const StyledHamburgerButton = styled.div<StyledHamburgerButtonProps>`
 
   @media (max-width: 768px) {
     position: ${props => props.navbarOpened ? 'fixed' : 'absolute'};
+    top: ${props => {
+      if (!props.topNavbarVisible && props.navbarOpened) {
+        return '90px';
+      }
+
+      return '10px';
+    }};
   }
 
   &:hover {
