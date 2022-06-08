@@ -4,8 +4,8 @@
   "display": "standalone",
   "scope": "/",
   "start_url": "/",
-  "name": "Krzysztof Kucharski - Portfolio",
-  "short_name": "Krzysztof Kucharski",
+  "name": "KrzysztofKucharski",
+  "short_name": "KrzysztofKucharski",
   "description": "Krzysztof Kucharski - Portfolio",
   "icons": [
     {
