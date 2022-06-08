@@ -43,3 +43,11 @@ public/meta.json
 .idea/**/vcs.xml
 .idea/**/jsLibraryMappings.xml
 .idea/**/inspectionProfiles
+
+# PWA
+public/workbox-*.js
+public/workbox-*.js.map
+public/worker-*.js
+public/worker-*.js.map
+public/sw.js
+public/sw.js.map
