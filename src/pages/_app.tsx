@@ -16,7 +16,10 @@ const GlobalStyles = createGlobalStyle`
     padding: 0;
     margin: 0;
     background: #353535;
-    font-family: poppins, serif;
+    background-image: radial-gradient(rgba(255, 255, 255, 0.15) 1px, transparent 0);
+    background-size: 25px 25px;
+    background-position: -19px -19px;
+    font-family: Inter, sans-serif;
     font-weight: 500;
     font-style: normal;
   }

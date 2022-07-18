@@ -37,7 +37,7 @@ export const StyledContent = styled.div<NavbarOpenedProps>`
 `;
 
 export const StyledTitleBox = styled.div`
-  max-width: 645px;
+
   box-sizing: border-box;
   margin-bottom: 100px;
   color: #ffffff;
@@ -52,21 +52,17 @@ export const StyledTitleBox = styled.div`
 export const StyledTitle = styled.h1`
   box-sizing: border-box;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
+  text-align: center;
   justify-content: center;
   flex-direction: column;
-  color: #ffffff;
-  font-weight: 600;
-  font-size: 4.5em;
-  font-family: serif;
-
-  @media (max-width: 1050px) {
-    font-size: 3.3em;
-  }
-
-  @media (max-width: 450px) {
-    font-size: 3.2em;
-  }
+  color: #edf6ff;
+  letter-spacing: -2px;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 62px;
+  line-height: 108px;
+  font-family: Inter;
 `;
 
 export const StyledDescriptionsSection = styled.div`
