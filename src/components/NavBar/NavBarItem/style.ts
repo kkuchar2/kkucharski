@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const StyledNavBarItemSpan = styled.div`
-  font-family: serif;
   letter-spacing: 1px;
   color: white;
   font-size: 0.9em;

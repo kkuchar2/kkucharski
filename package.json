@@ -27,6 +27,10 @@
     "styled-components": "^5.3.5"
   },
   "devDependencies": {
+    "@chakra-ui/icons": "^2.0.4",
+    "@chakra-ui/react": "^2.2.4",
+    "@emotion/react": "^11.9.3",
+    "@emotion/styled": "^11.9.3",
     "@types/node": "17.0.40",
     "@types/react": "^18.0.12",
     "@types/react-dom": "18.0.5",
@@ -45,7 +49,7 @@
     "eslint-plugin-promise": "^6.0.0",
     "eslint-plugin-react": "^7.30.0",
     "eslint-plugin-unused-imports": "^2.0.0",
-    "framer-motion": "^6.3.10",
+    "framer-motion": "^6.5.1",
     "kuchkr-react-component-library": "^2.5.14",
     "moment": "^2.29.3",
     "next-build-id": "^3.0.0",
@@ -60,5 +64,5 @@
     "tailwindcss": "^3.0.24",
     "typescript": "4.7.3"
   },
-  "buildHash": "ed657f9b3769e8e55e1643e6f557eb334afe5ba0"
+  "buildHash": "9713ccb3bc9baf6ed34cf3ded1796947724d5adf"
 }

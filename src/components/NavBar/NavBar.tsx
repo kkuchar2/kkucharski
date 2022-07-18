@@ -80,14 +80,14 @@ const NavBar = (props: DataItems<NavBarData>) => {
                     target={'_blank'}
                     src={'/images/github_icon.svg'}
                     alt={'github_logo'}
-                    width={27}/>
+                    width={22}/>
 
                 <ImageLink
                     href={"https://www.linkedin.com/in/kkuchar/"}
                     target={'_blank'}
                     src={'/images/linkedin_icon.svg'}
                     alt={'linkedin_logo'}
-                    width={27}/>
+                    width={22}/>
 
                 <ButtonLink
                     href={"https://storage.googleapis.com/kkucharski-server/resume_public_2022.pdf"}

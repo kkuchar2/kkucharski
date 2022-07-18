@@ -16,7 +16,7 @@ export const StyledNavBar = styled.div<StyledNavbarProps>`
   position: fixed;
   left: 0;
   backdrop-filter: blur(20px);
-  background: rgba(33, 33, 33, 0.85);
+  background: rgb(46, 46, 46);
   z-index: 5;
   top: ${props => props.visible ? '0' : '-80px'};
   transition: all 0.25s ease-out;

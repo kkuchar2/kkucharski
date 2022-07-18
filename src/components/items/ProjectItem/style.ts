@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const StyledProjectItem = styled.div`
-  background: rgba(255, 255, 255, 0.02);
+  background: rgb(62, 62, 62);
   display: flex;
   flex-direction: column;
   padding: 20px 20px 0;
@@ -34,7 +34,7 @@ export const ProjectTitle = styled.h1`
   color: #f6f6f6;
   font-weight: 600;
   font-size: 20px;
-  font-family: "Calibre", sans-serif;
+  font-family: Inter, sans-serif;
   margin-top: 0;
 `;
 
@@ -42,7 +42,7 @@ export const ProjectDescription = styled.div`
   color: #ccd6f6;
   font-weight: 400;
   font-size: 15px;
-  font-family: "Calibre", sans-serif;
+  font-family: Inter, sans-serif;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -56,7 +56,7 @@ export const ProjectStacks = styled.div`
   color: #bebebe;
   font-weight: 300;
   font-size: 15px;
-  font-family: "Calibre", sans-serif;
+  font-family: Inter, sans-serif;
   display: flex;
   flex-wrap: wrap;
   align-items: flex-end;
@@ -65,10 +65,10 @@ export const ProjectStacks = styled.div`
 `;
 
 export const StyledProjectStack = styled.div`
-  color: #959595;
-  font-weight: 300;
+  color: #a4a4a4;
+  font-weight: 600;
   font-size: 14px;
-  font-family: "Calibre", sans-serif;
+  font-family: Inter, sans-serif;
   display: flex;
   align-items: center;
   justify-content: flex-start;

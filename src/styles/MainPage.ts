@@ -43,10 +43,29 @@ export const StyledTitleBox = styled.div`
   color: #ffffff;
   font-weight: 600;
   margin-top: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 
   @media (max-width: 768px) {
     margin-bottom: 50px;
   }
+`;
+
+export const RainbowTitle = styled.span`
+  box-sizing: border-box;
+  text-align: center;
+  -webkit-text-fill-color: transparent;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 62px;
+  line-height: 108px;
+  font-family: Inter;
+  background: linear-gradient(65deg, #ff0099, #ff7300, #ffeb00, #00ff00);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 `;
 
 export const StyledTitle = styled.h1`

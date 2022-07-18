@@ -7,6 +7,7 @@ export const StyledImageLink = styled.a`
   justify-content: center;
   text-decoration: none;
   margin-left: 40px;
+  opacity: 0.7;
 
   // Mobile 
   @media (max-width: 768px) {
@@ -15,6 +16,7 @@ export const StyledImageLink = styled.a`
 
   &:hover {
     cursor: pointer;
+    opacity: 1;
   }
 `;
 

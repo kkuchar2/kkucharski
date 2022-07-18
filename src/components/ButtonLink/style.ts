@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const StyledButtonLink = styled.a`
-  height: 50px;
+  height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -19,12 +19,15 @@ export const StyledButtonLink = styled.a`
 `;
 
 export const LinkButton = styled.button`
-  background: #373737;
+  background: #601D48;
   border: none;
-  color: white;
+  color: #f8f8f8;
   border-radius: 4px;
-  padding: 12px 40px;
-  font-weight: bold;
+  font-size: 12px;
+  padding: 6px 20px;
+  font-weight: 600;
+  line-height: 20px;
+  font-family: Inter, sans-serif;
   box-sizing: border-box;
 
   // Mobile 
@@ -34,6 +37,6 @@ export const LinkButton = styled.button`
 
   &:hover {
     cursor: pointer;
-    background: #434343;
+    background: #862864;
   }
 `;

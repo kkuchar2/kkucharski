@@ -24,29 +24,33 @@ export const companyTextTheme = {
     fontSize: "1.2em",
     textAlign: 'left',
     fontWeight: 600,
+    fontFamily: 'Inter, sans-serif',
     margin: "0px 0px 0px 0px"
 };
 
 export const jobTitleTextTheme = {
     textColor: "#ffffff",
-    fontSize: "1.1em",
+    fontSize: "1.0em",
     textAlign: 'left',
     fontWeight: 500,
+    fontFamily: 'Inter, sans-serif',
     margin: "0px 0px 0px 0px"
 };
 
 export const jobTimeTextTheme = {
     textColor: "#c0c0c0",
-    fontSize: "1.2em",
+    fontSize: "1.0em",
     textAlign: 'left',
     fontWeight: 400,
+    fontFamily: 'Inter, sans-serif',
     margin: "0px 0px 10px 0px"
 };
 
 export const jobDescriptionTextTheme = {
     textColor: '#c0c0c0',
-    fontSize: "1em",
+    fontSize: "0.9em",
     textAlign: 'left',
-    fontWeight: 5600,
+    fontFamily: 'Inter, sans-serif',
+    fontWeight: 400,
     margin: "20px 0px 0px 0px"
 };

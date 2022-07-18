@@ -7,8 +7,9 @@ export const StyledTitle = styled.div`
 
 export const titleTextTheme = {
     textColor: "#dfdfdf",
-    fontSize: "2em",
+    fontSize: "1.7em",
     textAlign: 'left',
-    fontWeight: 400,
+    fontWeight: 700,
+    fontFamily: "Inter, sans-serif",
     margin: "0px 0px 0px 0px"
 };

@@ -23,6 +23,7 @@ export const schoolTextTheme = {
     fontSize: "1.2em",
     textAlign: 'left',
     fontWeight: 600,
+    fontFamily: 'Inter, sans-serif',
     margin: "0px 0px 0px 0px"
 };
 
@@ -31,6 +32,7 @@ export const eductionTitleTextTheme = {
     fontSize: "1.0em",
     textAlign: 'left',
     fontWeight: 500,
+    fontFamily: 'Inter, sans-serif',
     margin: "0px 0px 0px 0px"
 };
 
@@ -39,13 +41,15 @@ export const timeTextTheme = {
     fontSize: "1.0em",
     textAlign: 'left',
     fontWeight: 400,
+    fontFamily: 'Inter, sans-serif',
     margin: "0px 0px 10px 0px"
 };
 
 export const descriptionTextTheme = {
     textColor: '#c0c0c0',
-    fontSize: "0.8em",
+    fontSize: "0.9em",
     textAlign: 'left',
     fontWeight: 5600,
+    fontFamily: 'Inter, sans-serif',
     margin: "20px 0px 0px 0px"
 };
