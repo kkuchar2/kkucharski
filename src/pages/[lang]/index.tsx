@@ -14,6 +14,8 @@ import {ProjectsSection} from "components/sections/ProjectsSection/ProjectsSecti
 import {WorkSection} from "components/sections/WorkSection/WorkSection";
 import WithLanguageLayout from "components/WithLanguageLayout";
 import {
+    fadeIn,
+    fadeIn2,
     RainbowTitle,
     StyledBuildHash,
     StyledContent,
@@ -49,8 +51,8 @@ const Home = ({ language }) => {
             <StyledContent opened={navbarOpened}>
                 {/*<LanguageSelector/>*/}
                 <StyledTitleBox>
-                    <RainbowTitle>{'Hi'}</RainbowTitle>
-                    <StyledTitle>{'I\'m Krzysztof'}</StyledTitle>
+                    <RainbowTitle {...fadeIn}>{'Hi'}</RainbowTitle>
+                    <StyledTitle {...fadeIn2}>{'I\'m Krzysztof'}</StyledTitle>
                     <AboutSection/>
                 </StyledTitleBox>
                 <StyledDescriptionsSection>

@@ -1,3 +1,4 @@
+import {motion} from "framer-motion";
 import styled from "styled-components";
 
 interface NavbarOpenedProps {
@@ -36,8 +37,54 @@ export const StyledContent = styled.div<NavbarOpenedProps>`
   }
 `;
 
-export const StyledTitleBox = styled.div`
+export const fadeIn = {
+    initial: "hidden",
+    exit: "hidden",
+    animate: "visible",
+    variants: {
+        visible: {
+            y: 0,
+            opacity: 1,
+            transition: {
+                duration: 0.4,
+                ease: [0.7, 0.1, 0.3, 0.9]
+            }
+        },
+        hidden: {
+            y: -50,
+            opacity: 0,
+            transition: {
+                duration: 0.4
+            }
+        }
+    }
+};
 
+export const fadeIn2 = {
+    initial: "hidden",
+    exit: "hidden",
+    animate: "visible",
+    variants: {
+        visible: {
+            y: 0,
+            opacity: 1,
+            transition: {
+                duration: 0.4,
+                delay: 0.1,
+                ease: [0.0, 0.3, 0.6, 1]
+            }
+        },
+        hidden: {
+            y: -50,
+            opacity: 0,
+            transition: {
+                duration: 0.4
+            }
+        }
+    }
+};
+
+export const StyledTitleBox = styled.div`
   box-sizing: border-box;
   margin-bottom: 100px;
   color: #ffffff;
@@ -53,7 +100,7 @@ export const StyledTitleBox = styled.div`
   }
 `;
 
-export const RainbowTitle = styled.span`
+export const RainbowTitle = styled(motion.span)`
   box-sizing: border-box;
   text-align: center;
   -webkit-text-fill-color: transparent;
@@ -68,7 +115,7 @@ export const RainbowTitle = styled.span`
   color: transparent;
 `;
 
-export const StyledTitle = styled.h1`
+export const StyledTitle = styled(motion.h1)`
   box-sizing: border-box;
   display: flex;
   align-items: center;
