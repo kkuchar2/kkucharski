@@ -1,24 +1,22 @@
 import React from "react";
 
-import {LinkImage, StyledImageLink} from "./style";
-
 interface ImageLinkProps {
     href: string,
     rel?: string,
     target?: string,
     src: string,
     alt: string,
-    width?: number | string,
-    height?: number | string,
+    title?: string,
+    size?: number | string
 }
 
 const ImageLink = (props: ImageLinkProps) => {
 
-    const { href, target, rel, src, alt, width, height } = props;
+    const { href, target, rel, src, alt, title, size } = props;
 
-    return <StyledImageLink href={href} target={target} rel={rel}>
-        <LinkImage src={src} alt={alt} width={width} height={height}/>
-    </StyledImageLink>;
+    return <a className={'flex items-center justify-center no-underline'} href={href} target={target} rel={rel}>
+        <img src={src} title={title} alt={alt} width={size} />
+    </a>;
 };
 
 ImageLink.defaultProps = {
@@ -26,8 +24,7 @@ ImageLink.defaultProps = {
     rel: undefined,
     src: 'img',
     alt: 'img',
-    width: 'auto',
-    height: 'auto',
+    size: 'auto'
 };
 
 export default ImageLink;

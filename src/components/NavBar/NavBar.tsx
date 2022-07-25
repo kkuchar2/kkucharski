@@ -1,27 +1,30 @@
-import React, {useCallback, useEffect, useMemo, useState} from "react";
+import React, {useEffect, useState} from "react";
+
+import {Theme, useColorMode} from "@chakra-ui/react";
 
 import {useAppContext} from "../../context/state";
-import {NavBarData} from "../../data";
 
-import {NavBarItem} from "./NavBarItem/NavBarItem";
-import {NavbarAdditionalItems, NavbarBaseItems, NavbarItems, StyledNavBar} from "./style";
+import {NavbarItems, StyledNavBar} from "./style";
 
-import ButtonLink from "components/ButtonLink/ButtonLink";
-import {HamburgerButton} from "components/HamburgerButton/HamburgerButton";
-import ImageLink from "components/ImageLink/ImageLink";
-import {DataItems} from "components/sections/common.types";
+import DualLanguageSwitch from "components/DualLanguageSwitch/DualLanguageSwitch";
+import ThemeSwitcher from "components/ThemeSwitcher/ThemeSwitcher";
 import useMediaQuery from "hooks/useMediaQuery";
 
-const NavBar = (props: DataItems<NavBarData>) => {
+interface StyleOptions {
+    theme: Theme
+    colorMode: 'light' | 'dark'
+    colorScheme: string
+}
+
+const NavBar = () => {
 
     const [show, setShow] = useState(true);
     const [lastScrollY, setLastScrollY] = useState(0);
-
-    const { items } = props;
-
     const isMobile = useMediaQuery('(max-width: 768px)');
 
     const [navbarOpened, setNavbarOpened] = useAppContext();
+
+    const { colorMode } = useColorMode();
 
     const controlNavbar = () => {
         if (typeof window !== 'undefined') {
@@ -53,51 +56,13 @@ const NavBar = (props: DataItems<NavBarData>) => {
         }
     }, [lastScrollY]);
 
-    const onHamburgerClick = useCallback(() => {
-        setNavbarOpened(!navbarOpened);
-    }, [navbarOpened]);
-
-    const renderItems = useMemo(() => {
-        return items.map((item, index) => <NavBarItem key={index} number={index} {...item}/>);
-    }, [items]);
-
-    const renderHamburgerButton = useMemo(() => {
-        if (!isMobile) {
-            return null;
-        }
-        return <HamburgerButton onClick={onHamburgerClick} navbarOpened={navbarOpened} topNavbarVisible={show}/>;
-    }, [isMobile, navbarOpened, show]);
-
-    return <StyledNavBar navbarOpened={navbarOpened} visible={show}>
+    return <StyledNavBar navbarOpened={navbarOpened} visible={show} style={{
+        background: colorMode === 'light' ? '#fafafa' : '#1D1D1D'
+    }}>
         <NavbarItems navbarOpened={navbarOpened} visible={show}>
-            <NavbarBaseItems navbarOpened={navbarOpened} visible={show}>
-                {renderItems}
-            </NavbarBaseItems>
-
-            <NavbarAdditionalItems navbarOpened={navbarOpened} visible={show}>
-                <ImageLink
-                    href={"https://github.com/kkuchar2"}
-                    target={'_blank'}
-                    src={'/images/github_icon.svg'}
-                    alt={'github_logo'}
-                    width={22}/>
-
-                <ImageLink
-                    href={"https://www.linkedin.com/in/kkuchar/"}
-                    target={'_blank'}
-                    src={'/images/linkedin_icon.svg'}
-                    alt={'linkedin_logo'}
-                    width={22}/>
-
-                <ButtonLink
-                    href={"https://storage.googleapis.com/kkucharski-server/resume_public_2022.pdf"}
-                    rel="noopener noreferrer"
-                    target="_blank"
-                    download={true}>Resume</ButtonLink>
-            </NavbarAdditionalItems>
+            <DualLanguageSwitch firstLanguage={'en'} secondLanguage={'pl'}/>
+            <ThemeSwitcher/>
         </NavbarItems>
-
-        {renderHamburgerButton}
     </StyledNavBar>;
 };
 

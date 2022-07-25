@@ -1,0 +1,25 @@
+{
+  "i18n": {
+    "common": {
+      "themeSwitch": "Zmień motyw"
+    },
+    "index": {
+      "title": "Cześć",
+      "krzysztof": "Jestem Krzysztof",
+      "work": {
+        "name": "Praca"
+      },
+      "projects": {
+        "name": "Projekty",
+        "descriptions": {
+          "openglengine": "Mały demonstracyjny silniczek OpenGL",
+          "sortingvisualizer": "Wizualizacja algorytmów sortowania",
+          "reactadmin": "Aplikacja w ReactJS do zarządzania serwerem w Django"
+        }
+      },
+      "education": {
+        "name": "Edukacja"
+      }
+    }
+  }
+}

@@ -1,15 +1,13 @@
 import styled from "styled-components";
 
+export interface ColorModeProps {
+    colorMode: string;
+}
+
 export const StyledTitle = styled.div`
   display: flex;
   z-index: 1;
+  font-size: 1.7em;
+  font-weight: 700;
+  font-family: "Inter", sans-serif;
 `;
-
-export const titleTextTheme = {
-    textColor: "#dfdfdf",
-    fontSize: "1.7em",
-    textAlign: 'left',
-    fontWeight: 700,
-    fontFamily: "Inter, sans-serif",
-    margin: "0px 0px 0px 0px"
-};

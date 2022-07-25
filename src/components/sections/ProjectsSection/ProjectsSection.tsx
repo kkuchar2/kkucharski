@@ -1,30 +1,24 @@
 import React, {useMemo} from 'react';
 
-import {Text} from "kuchkr-react-component-library";
+import {useTranslation} from 'next-export-i18n';
 
 import {ProjectData} from "../../../data";
 import {ProjectItem} from "../../items/ProjectItem/ProjectItem";
-import {StyledTitle, titleTextTheme} from '../common.styles';
+import {StyledTitle} from '../common.styles';
 import {DataItems} from "../common.types";
 
-import {StyledChildren, StyledProjectsSection} from "./style";
+import {StyledChildren} from "./style";
 
 export const ProjectsSection = (props: DataItems<ProjectData>) => {
 
     const { items } = props;
 
-    const renderItems = useMemo(() => {
-        return items.map((item, index) => {
-            return <ProjectItem key={index} {...item}/>;
-        });
-    }, [items]);
+    const { t } = useTranslation();
 
-    return <StyledProjectsSection>
-        <StyledTitle>
-            <Text theme={titleTextTheme} text={'Projects'}/>
-        </StyledTitle>
-        <StyledChildren>
-            {renderItems}
-        </StyledChildren>
-    </StyledProjectsSection>;
+    const renderItems = useMemo(() => items.map((item, index) => <ProjectItem key={index} {...item}/>), [items]);
+
+    return <div>
+        <StyledTitle>{t('index.projects.name')}</StyledTitle>
+        <StyledChildren>{renderItems}</StyledChildren>
+    </div>;
 };

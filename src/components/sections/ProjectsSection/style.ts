@@ -9,6 +9,3 @@ export const StyledChildren = styled.div`
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   flex: 1;
 `;
-export const StyledProjectsSection = styled.div`
-
-`;

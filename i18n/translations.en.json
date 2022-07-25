@@ -1,0 +1,25 @@
+{
+  "i18n": {
+    "common": {
+      "themeSwitch": "Switch Theme"
+    },
+    "index": {
+      "title": "Hi",
+      "krzysztof": "I'm Krzysztof",
+      "work": {
+        "name": "Work"
+      },
+      "projects": {
+        "name": "Projects",
+        "descriptions": {
+          "openglengine": "Project as integration of OpenGL rendering system into graphical user interface. Used for testing, learning and experimentation",
+          "sortingvisualizer": "Realtime sorting algorithm visualiser",
+          "reactadmin": "React frontend for Django server to manage accounts and tables"
+        }
+      },
+      "education": {
+        "name": "Education"
+      }
+    }
+  }
+}

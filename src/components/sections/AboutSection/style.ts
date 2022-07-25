@@ -16,4 +16,8 @@ export const StyledAboutSection = styled.div`
   text-align: center;
   box-sizing: border-box;
   margin-top: 100px;
+
+  @media (max-width: 600px) {
+    padding: 0 20px;
+  }
 `;

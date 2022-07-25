@@ -20,20 +20,20 @@ export const projects: ProjectData[] = [
     {
         name: 'openglengine',
         stack: ['C++', 'CMake'],
-        description: 'Project as integration of OpenGL rendering system into graphical user interface. Used for testing, learning and experimentation.',
+        description: 'index.projects.descriptions.openglengine',
         github: 'https://github.com/kkuchar2/openglengine',
     },
     {
         name: 'react-sorting-visualiser',
         stack: ['ReactJS', 'TypeScript', 'Webpack', 'ThreeJS', 'Firebase'],
-        description: 'Realtime sorting algorithm visualiser',
+        description: 'index.projects.descriptions.sortingvisualizer',
         github: 'https://github.com/kkuchar2/react-sorting-visualizer',
         website: 'https://sortingvis.kkucharski.com/'
     },
     {
         name: 'react-django-administration',
         stack: ['ReactJS', 'TypeScript', 'Webpack', 'Firebase'],
-        description: 'React frontend for Django server to manage accounts and tables',
+        description: 'index.projects.descriptions.reactadmin',
         github: 'https://github.com/kkuchar2/react-django-administration'
     },
     {
@@ -58,24 +58,24 @@ export const projects: ProjectData[] = [
     }
 ];
 
-export interface EducationData {
-    school: string;
+export interface InstitutionData {
+    institution: string;
     title: string;
     description: string;
     startTime: string;
     endTime: string;
 }
 
-export const education: EducationData[] = [
+export const education: InstitutionData[] = [
     {
-        school: 'Warsaw University of Technology',
+        institution: 'Warsaw University of Technology',
         title: 'Bachelor of Science in Engineering, Telecommunication',
         description: 'MPEG-7 library for image classification (C++, Java, Python, JNI, ctypes)',
         startTime: '2012',
         endTime: '2015'
     },
     {
-        school: 'Warsaw University of Technology',
+        institution: 'Warsaw University of Technology',
         title: 'MSc in Engineering, Telecommunication',
         description: 'Remote objects recognition in images with CNN (Python, Java, caffee, mxnet)',
         startTime: '2015',
@@ -83,24 +83,16 @@ export const education: EducationData[] = [
     }
 ];
 
-export interface WorkData {
-    company: string;
-    title: string;
-    description: string;
-    startTime: string;
-    endTime: string;
-}
-
-export const work: WorkData[] = [
+export const work: InstitutionData[] = [
     {
-        company: 'Goldman Sachs',
+        institution: 'Goldman Sachs',
         title: 'Analyst & Associate',
         description: 'Maintaining and developing features for financial platform based on microservices architecture. (Java, SLANG, ReactJS).',
         startTime: 'April 2020',
         endTime: 'Present'
     },
     {
-        company: 'Samsung R&D Institute Poland',
+        institution: 'Samsung R&D Institute Poland',
         title: 'Software Engineer',
         description: 'Augmented Reality research for Visual Entertainment team. Android applications with Unity and ARCore',
         startTime: 'January 2018',

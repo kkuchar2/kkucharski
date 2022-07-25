@@ -1,5 +1,8 @@
 import React, {useMemo} from "react";
 
+import {useColorMode} from "@chakra-ui/react";
+import {useTranslation} from "next-export-i18n";
+
 import {ProjectData} from "../../../data";
 
 import {
@@ -20,13 +23,17 @@ export const ProjectItem = (props: ProjectData) => {
 
     const { name, icon, stack, description, github, website, npm } = props;
 
+    const { t } = useTranslation();
+
+    const colorMode = useColorMode();
+
     const renderProjectStacks = useMemo(() => {
         return stack.map((stack, index) => <StyledProjectStack key={index}>{stack}</StyledProjectStack>);
     }, [stack]);
 
-    return <StyledProjectItem>
+    return <StyledProjectItem colorMode={colorMode.colorMode}>
         <SvgIcon
-            className={`scale-150 absolute top-[18px] left-[25px] text-[#ffbe69]`}
+            className={`scale-150 absolute top-[27px] left-[25px] text-[#ffbe69]`}
             icon={icon ? icon : '/svg/folder.svg'}/>
         <StyledLinks>
             <SvgIconLink
@@ -42,7 +49,7 @@ export const ProjectItem = (props: ProjectData) => {
         </StyledLinks>
         <ProjectContent>
             <ProjectTitle>{name}</ProjectTitle>
-            <ProjectDescription>{description}</ProjectDescription>
+            <ProjectDescription>{t(description)}</ProjectDescription>
             <ProjectStacks>
                 {renderProjectStacks}
             </ProjectStacks>

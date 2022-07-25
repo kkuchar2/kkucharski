@@ -1,30 +1,29 @@
 import React, {useMemo} from 'react';
 
-import {Text} from "kuchkr-react-component-library";
+import {useTranslation} from "next-export-i18n";
 
-import {WorkData} from "../../../data";
-import {WorkItem} from "../../items/WorkItem/WorkItem";
-import {StyledTitle, titleTextTheme} from '../common.styles';
-import {DataItems} from "../common.types";
+import {InstitutionData} from "../../../data";
+import {InstitutionItem} from "../../items/InstitutionItem";
+import {StyledTitle} from '../common.styles';
+import {DataItems, InstitutionProps} from "../common.types";
 
 import {StyledChildren, StyledWorkSection} from "./style";
 
-export const WorkSection = (props: DataItems<WorkData>) => {
+export const WorkSection = (props: DataItems<InstitutionData> & InstitutionProps) => {
 
-    const { items } = props;
+    const { items, accentColorLight, accentColorDark } = props;
 
-    const renderItems = useMemo(() => {
-        return items.map((item, index) => {
-            return <WorkItem key={index} {...item}/>;
-        });
-    }, [items]);
+    const { t } = useTranslation();
+
+    const renderItems = useMemo(() => items.map((item, index) => {
+        return <InstitutionItem key={index}
+                                accentColorLight={accentColorLight}
+                                accentColorDark={accentColorDark}
+                                {...item}/>;
+    }), [items]);
 
     return <StyledWorkSection>
-        <StyledTitle>
-            <Text theme={titleTextTheme} text={'Work'}/>
-        </StyledTitle>
-        <StyledChildren>
-            {renderItems}
-        </StyledChildren>
+        <StyledTitle>{t('index.work.name')}</StyledTitle>
+        <StyledChildren>{renderItems}</StyledChildren>
     </StyledWorkSection>;
 };
