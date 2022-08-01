@@ -1,30 +1,34 @@
 import {motion} from "framer-motion";
 import styled from "styled-components";
 
-import {ColorModeProps} from "components/sections/common.styles";
+import {MotionBox} from "components/MotionBox/MotionBox";
 
-export const StyledProjectItem = styled.div<ColorModeProps>`
-  background: ${props => props.colorMode === 'dark' ? 'rgba(12, 12, 12, 0.15)' : 'white'};
+export const StyledProjectItem = styled(MotionBox)`
   display: flex;
   flex-direction: column;
-  padding: 20px 20px 0;
-  border-radius: 5px;
+  padding: 40px 20px 20px 20px;
   box-sizing: border-box;
-  backdrop-filter: blur(5px);
+  gap: 10px;
   height: auto;
   transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
   transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1) 0s, opacity 0.25s cubic-bezier(0.645, 0.045, 0.355, 1) 0s, transform 0.25s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
-
 
   &:before {
     box-shadow: inset 0 0 2000px rgba(255, 255, 255, .5);
     filter: blur(2px);
   }
 
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+
   @media (min-width: 768px) {
     &:hover {
-      > * h1 {
-        background: linear-gradient(45deg, #ff0099, #ff7300, #ffeb00 60%, #00b2ff 80%);
+      //transform: scale(1.2);
+
+      .project-item-title {
+        //background: linear-gradient(45deg, #ff0099, #ff7300, #ffeb00 60%, #00b2ff 80%);
+        background: #0bb927;
         -webkit-background-clip: text;
         background-clip: text;
         color: transparent;
@@ -37,9 +41,10 @@ export const StyledProjectItem = styled.div<ColorModeProps>`
 export const ProjectContent = styled.div`
   display: flex;
   flex-direction: column;
-  height: 250px;
+  height: 200px;
   grid-template-rows: 50px 70px 130px;
   margin-bottom: 20px;
+  gap: 10px;
 `;
 
 export const ProjectTitle = styled(motion.h1)`
@@ -61,12 +66,19 @@ export const ProjectDescription = styled.div`
   flex: 1 0;
 `;
 
-export const ProjectStacks = styled.div`
-  font-weight: 300;
-  font-size: 15px;
+export const ProjectStacksWrap = styled.div`
+  height: 100%;
   display: flex;
   flex-wrap: wrap;
   align-items: flex-end;
+  justify-content: flex-start;
+  gap: 10px;
+`;
+
+export const ProjectStacks = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
   justify-content: flex-start;
   gap: 10px;
 `;
@@ -81,6 +93,7 @@ export const StyledProjectStack = styled.div`
 
 export const StyledLinks = styled.div`
   display: flex;
+  flex: 1 0;
   box-sizing: border-box;
   justify-content: flex-end;
   align-items: flex-start;

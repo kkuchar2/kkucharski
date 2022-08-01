@@ -3,6 +3,5 @@ export interface DataItems<T> {
 }
 
 export interface InstitutionProps {
-    accentColorLight: string;
-    accentColorDark: string;
+    headerColor: string;
 }

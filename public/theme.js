@@ -8,7 +8,6 @@ const DARK_THEME_HTML_BG = '#272727';
 ;(function initTheme() {
     // Get theme from localStorage, if it doesn't exist, set it to default
     const theme = localStorage.getItem(LOCALSTORAGE_THEME_KEY) || DEFAULT_THEME;
-
     // Apply background color to html element, to prevent flash of white
     const backgroundColor = theme === 'dark' ? DARK_THEME_HTML_BG : LIGHT_THEME_HTML_BG;
     document.querySelector('html').style.setProperty('background', backgroundColor);

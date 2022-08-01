@@ -13,8 +13,4 @@ export const StyledWorkSection = styled.div`
   display: grid;
   grid-template-rows: 80px auto;
   position: relative;
-
-  @media (max-width: 650px) {
-    padding-bottom: 40px;
-  }
 `;

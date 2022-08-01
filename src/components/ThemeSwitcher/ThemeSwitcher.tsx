@@ -1,35 +1,25 @@
-import React, {useMemo} from "react";
+import React from "react";
 
-import {useColorMode} from "@chakra-ui/react";
+import {Button, useColorMode} from "@chakra-ui/react";
 import {SunIcon} from "@heroicons/react/outline";
 import {MoonIcon} from "@heroicons/react/solid";
 import {useTranslation} from "next-export-i18n";
 
-import { StyledThemeSwitchButton } from "./style";
-import {ThemeSwitcherProps} from "./ThemeSwitcher.types";
+import {useSemanticColor} from "hooks/useSemanticColor";
 
-const ThemeSwitcher = (props: ThemeSwitcherProps) => {
+const ThemeSwitcher = () => {
 
     const { colorMode, toggleColorMode } = useColorMode();
 
-    const { iconSize } = props;
+    const IconComponent = colorMode === 'light' ? MoonIcon : SunIcon;
 
     const { t } = useTranslation();
 
-    const renderThemeSwitchIcon = useMemo(() => {
-        if (colorMode === 'light') {
-            return <MoonIcon color="#A0AEC0"/>;
-        }
-        return <SunIcon color="#e6e6e6"/>;
-    }, [colorMode]);
-
-    return <StyledThemeSwitchButton
+    return <Button bg={'none'} _hover={{ bg: 'none' }} _focus={{ bg: 'none' }}
         title={t('common.themeSwitch')}
-        onClick={toggleColorMode}
-        theme={colorMode}
-        size={iconSize}>
-        {renderThemeSwitchIcon}
-    </StyledThemeSwitchButton>;
+        onClick={toggleColorMode}>
+        <IconComponent width={20} color={useSemanticColor('theme-switch-icon')}/>
+    </Button>;
 };
 
 ThemeSwitcher.defaultProps = {

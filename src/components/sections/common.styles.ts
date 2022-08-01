@@ -1,9 +1,5 @@
 import styled from "styled-components";
 
-export interface ColorModeProps {
-    colorMode: string;
-}
-
 export const StyledTitle = styled.div`
   display: flex;
   z-index: 1;
