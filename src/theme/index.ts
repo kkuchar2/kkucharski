@@ -6,6 +6,8 @@ const tokens = {
         'default': {
             'bg-default': "#ffffff",
             'bg-navbar': "#dedede",
+            'bg-topbar-social-icon': "#788290",
+            'bg-topbar-social-icon-hover': "#4a4a4a",
             'text-default': "#333",
             'text-about': "#6B727F",
             'text-lang-option': "#a2a2a2",
@@ -36,6 +38,8 @@ const tokens = {
         _dark: {
             'bg-default': "#272727",
             'bg-navbar': "rgba(29,29,29,0.6)",
+            'bg-topbar-social-icon': "#c0c0c0",
+            'bg-topbar-social-icon-hover': "#ffffff",
             'text-default': "#dfdfdf",
             'text-about': "#bababa",
             'text-lang-option': "#666666",
