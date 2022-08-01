@@ -48,7 +48,9 @@ const Index = () => {
                     bg={'rainbow'}
                     bgClip={'text'}
                     alignSelf={{ base: 'flex-start', md: 'center' }}
-                    padding={{ base: 10, md: 10 }}
+                    paddingTop={{ base: 10, md: 10 }}
+                    paddingBottom={{ base: 10, md: 10 }}
+                    paddingLeft={{ base: 5, md: 10 }}
                     fontWeight={'black'}
                     fontSize={{ base: '50px', md: '60px', lg: '70px', xl: '80px' }}
                     lineHeight={{ base: '20px', md: '50px', lg: '50px', xl: '110px' }}{...hiTitleAnim}>
@@ -56,7 +58,7 @@ const Index = () => {
                 </MotionBox>
                 <MotionBox
                     width={{ base: '100%', md: 'auto' }}
-                    paddingLeft={{ base: 10, md: 0 }}
+                    paddingLeft={{ base: 5, md: 0 }}
                     textAlign={{ base: 'left', md: 'center' }}
                     letterSpacing={'-0.05em'}
                     fontWeight={'extrabold'}
@@ -72,7 +74,7 @@ const Index = () => {
                     lineHeight={'30px'}
                     fontWeight={'normal'}
                     textAlign={{ base: 'left', md: 'center' }}
-                    padding={{ base: 10, xl: 20 }}
+                    padding={{ base: 5, xl: 20 }}
                     fontSize={'xl'}>
                     {t('index.about')}
                 </MotionBox>
