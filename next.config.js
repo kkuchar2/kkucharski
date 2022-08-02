@@ -11,12 +11,7 @@ module.exports = withPWA({
         console.log('Generating build hash for NextJS modules:', id);
         return id;
     },
-    // webpack: (config, {isServer}) => {
-    //     config.experiments = {topLevelAwait: true};
-    // },
     pwa: {
-        dest: "public",
-        register: true,
-        skipWaiting: true
+        dest: "public"
     }
 });

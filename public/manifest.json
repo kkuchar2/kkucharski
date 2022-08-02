@@ -2,7 +2,6 @@
   "theme_color": "#000000",
   "background_color": "#fafafa",
   "display": "standalone",
-  "scope": "/",
   "start_url": "/",
   "name": "KrzysztofKucharski",
   "short_name": "KrzysztofKucharski",
