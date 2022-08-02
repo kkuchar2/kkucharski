@@ -47,7 +47,7 @@ export const Dots = () => {
         return { vec, transform, positions };
     }, [viewport]);
 
-    const roundedSquareWave = useCallback((time, distX, distY, dist) => {
+    const roundedSquareWave = useCallback((time, distX, distY) => {
         let coeff = Math.sin(0.2 + Math.PI);
         return 5 * Math.exp(-(distX * distX + distY * distY) / 30000) * coeff;
     }, []);
@@ -64,10 +64,8 @@ export const Dots = () => {
             // (x, y) square distance from mouse to dot
             const distX = positions[i].x - x;
             const distY = positions[i].y - y;
-            const dist = Math.sqrt(distX * distX + distY * distY);
-
             // mouse position in a grid:
-            const wave = roundedSquareWave(time, distX, distY, dist);
+            const wave = roundedSquareWave(time, distX, distY);
 
             vec.copy(positions[i]).add(new Vector3(wave * distX, wave * distY, wave));
             transform.setPosition(vec);

@@ -16,7 +16,7 @@ import {SvgIconLink} from "components/SvgIconLink/SvgIconLink";
 
 export const ProjectItem = (props: ProjectData) => {
 
-    const { name, icon, stack, description, github, website } = props;
+    const { name, stack, description, github, website } = props;
 
     const { t } = useTranslation();
 

@@ -26,6 +26,10 @@ const LanguageSwitchButton = (props: LanguageSwitchButtonProps) => {
         );
     }, [query, router]);
 
+    const onButtonClick = useCallback(() => {
+        setLanguage();
+    }, [setLanguage]);
+
     return useMemo(() => {
         if (!query) {
             return <></>;
@@ -42,10 +46,10 @@ const LanguageSwitchButton = (props: LanguageSwitchButtonProps) => {
                 bg: "none",
                 color: active ? 'text-lang-option-active-hover' : 'text-lang-option-hover',
             }}
-            onClick={() => setLanguage()}>
+            onClick={onButtonClick}>
             {lang}
         </Button>;
-    }, [lang, active, query]);
+    }, [lang, active, query, onButtonClick]);
 };
 
 export default LanguageSwitchButton;
