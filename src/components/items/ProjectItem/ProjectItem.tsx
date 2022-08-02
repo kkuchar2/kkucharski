@@ -47,12 +47,11 @@ export const ProjectItem = (props: ProjectData) => {
                     href={github}
                     target={'_blank'}
                     icon={'/svg/github.svg'}/>
-                <SvgIconLink
-                    className={'text-[#cecece] hover:text-[#ffffff] my-[-2px]'}
-                    href={website}
-                    target={'_blank'}
-                    icon={'/svg/external_link.svg'}/>
-
+                {/*<SvgIconLink*/}
+                {/*    className={'text-[#cecece] hover:text-[#ffffff] my-[-2px]'}*/}
+                {/*    href={website}*/}
+                {/*    target={'_blank'}*/}
+                {/*    icon={'/svg/external_link.svg'}/>*/}
             </StyledLinks>
         </Box>
         <ProjectContent>
