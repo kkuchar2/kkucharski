@@ -1,36 +1,50 @@
-import {SocialIcon as BaseSocialIcon, SocialIconProps} from "react-social-icons";
+import {CSSProperties, useCallback, useState} from "react";
+
+import {SocialIcon as BaseSocialIcon} from "react-social-icons";
 import styled from "styled-components";
 
 interface HoverSocialIconProps {
     size: number;
     defaultColor: string;
     hoverColor: string;
+    className?: string;
+    bgColor?: string;
+    fgColor?: string;
+    label?: string;
+    network?: string;
+    url?: string;
+    style?: CSSProperties;
 }
 
 const StyledBaseSocialIcon = styled(BaseSocialIcon)<any>`
-  width: ${(props: HoverSocialIconProps) => props.size}px !important;
-  height: ${(props: HoverSocialIconProps) => props.size}px !important;
-  
   .social-svg-icon {
     transition: none !important;
-    fill: ${({ defaultColor }) => defaultColor} !important;
-  }
-  
-  &:hover {
-    .social-svg-icon {
-      fill: ${({ hoverColor }) => hoverColor} !important;
-    }
   }
 `;
 
-const SocialIcon = (props: HoverSocialIconProps & SocialIconProps) => {
-    return <StyledBaseSocialIcon target={'_blank'} {...props}/>;
-};
+export const SocialIcon = (props: HoverSocialIconProps) => {
 
-SocialIcon.defaultProps = {
-    size: 30,
-    defaultColor: '#000',
-    hoverColor: '#fff'
-};
+    const { size, defaultColor, hoverColor, ...rest } = props;
 
-export default SocialIcon;
+    const [color, setColor] = useState(defaultColor);
+
+    const onMouseEnter = useCallback(() => {
+        setColor(hoverColor);
+    }, [hoverColor]);
+
+    const onMouseLeave = useCallback(() => {
+        setColor(defaultColor);
+    }, [defaultColor]);
+
+    return <StyledBaseSocialIcon target={"_blank"}
+                                 style={{
+                                     width: size,
+                                     height: size,
+                                 }}
+                                 onMouseEnter={onMouseEnter}
+                                 onMouseLeave={onMouseLeave}
+                                 bgColor={'none'}
+                                 fgColor={color}
+                                 {...rest}/>;
+
+};
