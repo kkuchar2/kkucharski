@@ -12,6 +12,7 @@ module.exports = withPWA({
         return id;
     },
     pwa: {
-        dest: "public"
+        dest: 'public',
+        register: true
     }
 });
