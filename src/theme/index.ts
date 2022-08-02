@@ -37,7 +37,7 @@ const tokens = {
         },
         _dark: {
             'bg-default': "#272727",
-            'bg-navbar': "rgba(29,29,29,0.6)",
+            'bg-navbar': "rgb(29,29,29)",
             'bg-topbar-social-icon': "#c0c0c0",
             'bg-topbar-social-icon-hover': "#ffffff",
             'text-default': "#dfdfdf",

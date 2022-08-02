@@ -9,7 +9,7 @@ import ThemeSwitcher from "components/ThemeSwitcher/ThemeSwitcher";
 import {useSemanticColor} from "hooks/useSemanticColor";
 
 const TopBar = () => {
-    return <StyledTopBar bg={'bg-navbar'} transition='background 2.15s' transitionTimingFunction='ease-out'>
+    return <StyledTopBar bg={'bg-navbar'}>
         <Box className={'flex items-center justify-between gap-[30px] h-full w-full md:w-auto'}>
             {/*<DualLanguageSwitch firstLanguage={'en'} secondLanguage={'pl'}/>*/}
             <Box
