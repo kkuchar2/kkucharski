@@ -26,15 +26,15 @@ export const SocialIcon = (props: HoverSocialIconProps) => {
 
     const { size, defaultColor, hoverColor, ...rest } = props;
 
-    const [color, setColor] = useState(defaultColor);
+    const [hover, setHover] = useState(false);
 
     const onMouseEnter = useCallback(() => {
-        setColor(hoverColor);
-    }, [hoverColor]);
+        setHover(true);
+    }, []);
 
     const onMouseLeave = useCallback(() => {
-        setColor(defaultColor);
-    }, [defaultColor]);
+        setHover(false);
+    }, []);
 
     return <StyledBaseSocialIcon target={"_blank"}
                                  style={{
@@ -44,7 +44,7 @@ export const SocialIcon = (props: HoverSocialIconProps) => {
                                  onMouseEnter={onMouseEnter}
                                  onMouseLeave={onMouseLeave}
                                  bgColor={'none'}
-                                 fgColor={color}
+                                 fgColor={hover ? hoverColor : defaultColor}
                                  {...rest}/>;
 
 };

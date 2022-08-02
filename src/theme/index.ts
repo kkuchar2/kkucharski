@@ -32,7 +32,7 @@ const tokens = {
 
             'lang-option-separator': "#a2a2a2",
             'lang-switch-icon': "rgba(0,0,0,0.3)",
-            'theme-switch-icon': "#A0AEC0",
+            'theme-switch-icon': "#788290",
             'rainbow': `linear-gradient(135deg, #0e73cc 1.93%, #624bbb 14.86%, #ff455d 48.09%, #f35815 77.82%, #f2b600 97.3%)`,
         },
         _dark: {
@@ -64,7 +64,7 @@ const tokens = {
 
             'lang-option-separator': "#666666",
             'lang-switch-icon': "rgba(255,255,255,0.19)",
-            'theme-switch-icon': "#e6e6e6",
+            'theme-switch-icon': "#ffc257",
             'rainbow': `linear-gradient(135deg, #0e73cc 1.93%, #624bbb 14.86%, #ff455d 48.09%, #f35815 77.82%, #f2b600 97.3%)`,
         },
     },

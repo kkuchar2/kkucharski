@@ -18,7 +18,7 @@ const ThemeSwitcher = () => {
     return <Button bg={'none'} _hover={{ bg: 'none' }} _focus={{ bg: 'none' }}
         title={t('common.themeSwitch')}
         onClick={toggleColorMode}>
-        <IconComponent width={20} color={useSemanticColor('theme-switch-icon')}/>
+        <IconComponent width={20} style={{marginTop: 2}} color={useSemanticColor('theme-switch-icon')}/>
     </Button>;
 };
 
