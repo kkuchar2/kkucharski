@@ -12,14 +12,11 @@ const firebaseConfig = {
 };
 
 export const initFirebase = () => {
-    console.log('DEBUG: ', process.env);
-    console.log('DEBUG: Firebase config: ', firebaseConfig);
-
     if (firebaseConfig?.projectId) {
         // Initialize Firebase
         return initializeApp(firebaseConfig);
     }
-    console.log('DEBUG: Fail to initialize Firebase');
+    console.warn('Fail to initialize Firebase');
     return null;
 };
 
