@@ -10,14 +10,6 @@ export interface ProjectData {
 
 export const projects: ProjectData[] = [
     {
-        name: 'kuchkr-react-component-library',
-        stack: ['React', 'TypeScript', 'RollupJS', 'StoryBook', 'Firebase'],
-        description: 'Small React components library for personal usage',
-        npm: 'https://www.npmjs.com/package/kuchkr-react-component-library',
-        github: 'https://github.com/kkuchar2/kuchkr-react-component-library',
-        website: 'https://components.kkucharski.com/'
-    },
-    {
         name: 'openglengine',
         stack: ['C++', 'CMake'],
         description: 'index.projects.descriptions.openglengine',

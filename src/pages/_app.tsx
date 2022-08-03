@@ -21,7 +21,7 @@ const App = function ({ Component, pageProps }) {
 
     return <AppWrapper>
         <Head>
-            <title>My new cool app</title>
+            <title>Krzysztof Kucharski 🧑</title>
         </Head>
         <ChakraProvider theme={theme}>
             <Component {...pageProps} />
