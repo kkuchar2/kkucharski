@@ -61,18 +61,18 @@ export interface InstitutionData {
 export const education: InstitutionData[] = [
     {
         institution: 'Warsaw University of Technology',
+        title: 'MSc in Engineering, Telecommunication',
+        description: 'Remote objects recognition in images with CNN (Python, Java, caffee, mxnet)',
+        startTime: '2015',
+        endTime: '2017'
+    },
+    {
+        institution: 'Warsaw University of Technology',
         title: 'Bachelor of Science in Engineering, Telecommunication',
         description: 'MPEG-7 library for image classification (C++, Java, Python, JNI, ctypes)',
         startTime: '2012',
         endTime: '2015'
     },
-    {
-        institution: 'Warsaw University of Technology',
-        title: 'MSc in Engineering, Telecommunication',
-        description: 'Remote objects recognition in images with CNN (Python, Java, caffee, mxnet)',
-        startTime: '2015',
-        endTime: '2017'
-    }
 ];
 
 export const work: InstitutionData[] = [
