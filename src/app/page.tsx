@@ -22,6 +22,7 @@ export default function Index() {
                         <WorkList/>
                         <div className={styles.viewMyResume}>
                             <Link
+                                prefetch={false}
                                 className={styles.viewMyResumeLink}
                                 href={'doc/resume_Krzysztof_Kucharski.pdf'}
                                 target={'blank'}
