@@ -1,20 +1,4 @@
-const possibleErrors = {};
-
-const bestPractices = {};
-
-const strict = {};
-
-const variables = {};
-
-const promises = {};
-
-const es6 = {};
-
-const react = {};
-
-const typescript = {};
-
-const stylistic = {
+const rules = {
     'no-multiple-empty-lines': ['error', { max: 1, maxBOF: 0, maxEOF: 0 }],
     'no-trailing-spaces': ['error', { skipBlankLines: false }],
     'comma-spacing': 'error',
@@ -73,24 +57,8 @@ const stylistic = {
         'warn',
         { 'vars': 'all', 'varsIgnorePattern': '^_', 'args': 'after-used', 'argsIgnorePattern': '^_' }
     ],
+    'tailwindcss/no-custom-classname': 'off'
 };
-
-const tailwind = {
-    'tailwindcss/no-custom-classname': 'off',
-};
-
-const rules = Object.assign({},
-    possibleErrors,
-    bestPractices,
-    strict,
-    variables,
-    promises,
-    es6,
-    react,
-    typescript,
-    stylistic,
-    tailwind
-);
 
 module.exports = {
     root: true,
@@ -101,21 +69,19 @@ module.exports = {
         'eslint-plugin-import',
         'unused-imports'
     ],
-    parserOptions: {
-        ecmaFeatures: {
-            ecmaVersion: es6,
-            jsx: react,
-            sourceType: 'module'
+    'settings': {
+        'react': {
+            'version': 'detect'
         }
     },
     env: {
         browser: true,
         commonjs: true,
-        es6: es6,
         node: false
     },
     extends: [
         'plugin:react/recommended',
+        'plugin:@next/next/recommended',
         'plugin:tailwindcss/recommended'
     ],
     rules: rules,

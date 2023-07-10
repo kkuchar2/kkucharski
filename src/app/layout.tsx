@@ -5,7 +5,6 @@ import { Inter } from 'next/font/google';
 import Head from 'next/head';
 
 import { seoConfig } from '../../next-seo.config';
-import { useStore } from '../store/store';
 
 import '../styles/globals.css';
 
@@ -19,8 +18,6 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
-
-    useStore.setState({ dialogOpen: false });
 
     return <html lang={'en'}>
         <Head>
