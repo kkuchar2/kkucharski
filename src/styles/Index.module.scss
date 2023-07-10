@@ -1,0 +1,57 @@
+.indexPage {
+  display: grid;
+  place-items: center;
+  position: relative;
+  width: 100%;
+}
+
+.topSection {
+  display: grid;
+  place-items: center;
+  width: 100%;
+
+  @media (min-width: 1280px) {
+    height: 100svh;
+  }
+}
+
+.viewMyResume {
+
+  @keyframes show {
+    0% {
+      opacity: 0.001;
+      transform: translateX(-40px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  animation: show 1.5s cubic-bezier(0.175, 0.885, 0.32, 1) forwards 0.5s;
+  margin-top: 75px;
+  opacity: 0.001;
+
+  padding-left: 20px;
+  padding-right: 20px;
+  transform: translateX(-40px);
+
+  @media (min-width: 1280px) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.viewMyResumeLink {
+  color: #F56565;
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.25;
+  text-decoration: none;
+
+  &:hover {
+    color: #e34444;
+    text-decoration: underline;
+  }
+}

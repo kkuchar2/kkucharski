@@ -1,0 +1,31 @@
+.projectItem {
+  background: rgba(255, 255, 255, 0.01);
+  gap: 1.25rem;
+  opacity: 0.001;
+  padding: 1.25rem;
+  position: relative;
+  transform: translateY(-40px) scale(0.8);
+
+  @keyframes show {
+    0% {
+      opacity: 0.001;
+      transform: translateY(-40px) scale(0.8);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  width: 100%;
+
+  &.visible {
+    animation: show 0.8s cubic-bezier(0.175, 0.885, 0.32, 1) forwards;
+  }
+}
+
+@for $i from 1 through 20 {
+  .projectItem:nth-child(#{$i}n) {
+    animation-delay: #{$i * 0.05}s;
+  }
+}

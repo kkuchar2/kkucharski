@@ -23,15 +23,12 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-
+`
 # sitemap
 /public/sitemap*
 
 # robots.txt
 /public/robots.txt
-
-# meta witch project hash
-public/meta.json
 
 # IDEA
 .idea/**/workspace.xml

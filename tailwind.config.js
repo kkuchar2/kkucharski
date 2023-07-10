@@ -2,119 +2,93 @@ module.exports = {
     mode: 'jit',
     darkMode: 'class',
     content: [
-        "./src/**/*.{js,jsx,ts,tsx}",
+        './src/**/*.{js,jsx,ts,tsx}',
     ],
     theme: {
         extend: {
-            animation: {
-                'enter-menu': 'from-right 1.2s cubic-bezier(.41,.73,.51,1.02)',
-                'exit-menu': 'from-left 1.2s cubic-bezier(.41,.73,.51,1.02)',
-                enter: 'enter 200ms ease-out',
-                'slide-in': 'slide-in 1.2s cubic-bezier(.41,.73,.51,1.02)',
-                leave: 'leave 150ms ease-in forwards',
+            fontSize: {
+                indexDescriptionTitle: 'clamp(1.2rem, 1.5vw, 1.5rem)',
+                indexTitle: 'clamp(2.3rem, 7vw, 4.7rem)',
             },
             keyframes: {
-                enter: {
-                    '0%': {transform: 'scale(0.9)', opacity: 0},
-                    '100%': {transform: 'scale(1)', opacity: 1},
-                },
-                leave: {
-                    '0%': {transform: 'scale(1)', opacity: 1},
-                    '100%': {transform: 'scale(0.9)', opacity: 0},
-                },
-                'slide-in': {
-                    '0%': {transform: 'translateY(-100%)'},
-                    '100%': {transform: 'translateY(0)'},
-                },
-                'from-right': {
-                    '0%': {transform: 'translateX(100%)'},
-                    '100%': {transform: 'translateX(0)'},
-                },
-                'from-left': {
-                    '0%': {transform: 'translateX(0)'},
-                    '100%': {transform: 'translateX(100%)'},
-                },
-            },
-            colors: {
-                home: {
-                    bg: {
-                        accentDark: '#363636',
-                        accentLight: '#fafafa',
+                arrowButton: {
+                    from: {
+                        transform: 'translateX(-30px)',
+                        opacity: '0.001',
                     },
-                    title: {
-                        accentDark: '#fafafa',
-                        accentLight: '#535353',
+                    to: {
+                        transform: 'translateX(0)',
+                        opacity: '1',
                     }
                 },
-                navbar: {
-                    bg: {
-                        'lg-light': '#e3e3e3',
-                        'lg-dark': '#2e2e2e',
+                fadeIn: {
+                    from: {
+                        transform: 'translateY(30px)',
+                        opacity: '0.001',
                     },
-                    'group-title': {
-                        accentDark: '#a7a7a7',
-                        accentLight: '#1a1a1a',
+                    to: {
+                        transform: 'translateX(0)',
+                        opacity: '1',
+                    }
+                },
+                fadeIn2: {
+                    from: {
+                        opacity: '0.001',
                     },
-                    item: {
-                        'color-light': '#747474',
-                        'color-dark': '#cecece',
-                        'hover-light': '#fafafa',
-                        'hover-dark': '#2e2e2e',
+                    to: {
+                        opacity: '1',
                     }
                 },
-                'form-button': {
-                    default: '#0B5830',
-                    hover: '#0c6a39',
-                },
-                'input': {
-                    title: '#C1C1C1',
-                    default: '#1F1F1F',
-                    disabled: 'rgba(31,31,31,0.47)',
-                },
-                'ua-link': {
-                    default: '#74D79F',
-                    hover: '#00f7ff',
-                    visited: '#74D79F',
-                },
-                settings: {
-                    section: {
-                        accentLight: '#fafafa',
-                        accentDark: '#2e2e2e',
+                clipPath: {
+                    from: {
+                        'clip-path': 'inset(0 0 100% 0)',
+                    },
+                    to: {
+                        'clip-path': 'inset(0 0 0 0)',
                     }
                 },
-                btn: {
-                    edit: {
-                        full: {
-                            'default-dark': '#2e2e2e',
-                            'default-light': '#fafafa',
-                            'hover-light': '#2e2e2e',
-                            'hover-dark': '#454545',
-                        }
-                    }
+                title: {
+                    from: {
+                        transform: 'translateY(100px)',
+                        opacity: '0.001',
+                    },
+                    to: {
+                        transform: 'translateY(0)',
+                        opacity: '1',
+                    },
                 },
-                toast: {
-                    '50': '#FFF6DF',
-                    '100': '#fdf7f1',
-                    '200': '#FFE092',
-                    '300': '#ebbf99',
-                    '400': '#dea373',
-                    '500': '#ce864f',
-                    '600': '#A1724E',
-                    '700': '#8c501c',
-                    '800': '#5c340f',
-                    '900': '#3f3f3f',
+                animatePulseImage: {
+                    '0%, 100%': {
+                        opacity: 1
+                    },
+                    '50%': {
+                        opacity: .3
+                    }
                 }
             },
+            animation: {
+                title: 'title 1200ms cubic-bezier(0.175, 0.32, 0, 1) forwards',
+                indexDescription: 'fadeIn 1200ms ease forwards',
+                clipPath: 'clipPath 800ms cubic-bezier(0.175, 0.32, 0.12, 0.95) forwards',
+                arrowButton: 'arrowButton 800ms cubic-bezier(0.175, 0.32, 0.12, 0.95) forwards',
+                pulseImage: 'animatePulseImage 2s ease-in-out infinite',
+                showDelay: 'fadeIn2 800ms ease forwards 2s'
+            }
+        },
+        screens: {
+            'sm': '640px',
+            'md': '768px',
+            'lg': '1024px',
+            'xl': '1280px',
+            '2xl': '1536px',
         },
         fontFamily: {
-            sarabun: ['Sarabun', 'sans-serif'],
+            sans: ['var(--font-inter)']
         }
-    },
-    daisyui: {
-        base: false
     },
     plugins: [
         require('tailwindcss'),
-        require('autoprefixer')
+        require('autoprefixer'),
+        require('tailwindcss-animation-delay')
     ],
 };
