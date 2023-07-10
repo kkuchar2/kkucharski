@@ -23,9 +23,8 @@ export default function Index() {
                         <div className={styles.viewMyResume}>
                             <Link
                                 className={styles.viewMyResumeLink}
-                                href={'/doc/resume_Krzysztof_Kucharski.pdf'}
-                                rel={'noopener noreferrer'}
-                                target={'_blank'}
+                                href={'doc/resume_Krzysztof_Kucharski.pdf'}
+                                target={'blank'}
                             >
                                 {'View my Resume'}
                                 <Arrow/>
