@@ -2,7 +2,7 @@ import Script from 'next/script';
 
 import { JsonLd, seoConfig } from '../../../next-seo.config';
 
-interface SeoProps {
+type SeoProps = {
     seoKey: string;
 }
 

@@ -2,7 +2,7 @@ import { Technologies } from '../../portfolioConfig.types';
 
 import styles from './TechnologyGrid.module.scss';
 
-interface TechnologyGridProps {
+type TechnologyGridProps = {
     technologies: Technologies[];
     gap?: number;
     accentColor?: string;

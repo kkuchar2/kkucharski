@@ -10,7 +10,7 @@ import { Project } from '../../../portfolioConfig.types';
 
 import styles from './ProjectItem.module.scss';
 
-export interface ProjectItemProps {
+type ProjectItemProps = {
     project: Project;
 }
 

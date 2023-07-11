@@ -4,7 +4,7 @@ import { Work } from '../../portfolioConfig.types';
 
 import styles from './WorkItem.module.scss';
 
-interface WorkItemProps {
+type WorkItemProps = {
     workItem: Work;
 }
 

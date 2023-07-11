@@ -1,3 +1,3 @@
-export interface PageProps {
+export type PageProps = {
     seoKey: string;
 }

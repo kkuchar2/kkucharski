@@ -1,35 +1,35 @@
 import { socialProfileJsonLd, webPageJsonLd } from 'components/SEO/JsonLd';
 import { Metadata } from 'next';
 
-export interface JsonLd {
+export type JsonLd = {
     __html: string;
 }
 
-interface PageSeoConfig {
+type PageSeoConfig = {
     jsonLd?: JsonLd[];
     meta: Metadata;
 }
 
-interface PagesSeoConfig {
+type PagesSeoConfig = {
     [page: string]: PageSeoConfig;
 }
 
-interface SeoConfig {
+type SeoConfig = {
     common: Metadata;
     pages: PagesSeoConfig;
 }
 
-interface OgImage {
+type OgImage = {
     url: string;
     width?: number;
     height?: number;
 }
 
-interface TwitterImage {
+type TwitterImage = {
     url: string;
 }
 
-interface CustomMeta {
+type CustomMeta = {
     title: string;
     description: string;
     url: string

@@ -12,7 +12,7 @@ type Deployments = 'Google Cloud Platform' | 'Firebase' | 'DigitalOcean' | 'Rail
 
 export type Technologies = Languages | CSSTechnology | JSTechnology | Frameworks | Deployments | Libs | Databases
 
-export interface Project {
+export type Project = {
     title: string;
     image?: string;
     logo?: string;
@@ -24,7 +24,7 @@ export interface Project {
     technologies: Technologies[];
 }
 
-export interface Work {
+export type Work = {
     startDate: string;
     endDate: string;
     company: string;
@@ -33,7 +33,7 @@ export interface Work {
     technologies: Technologies[];
 }
 
-export interface IPortfolioConfig {
+export type IPortfolioConfig = {
     work: Work[],
     projects: Project[],
 }

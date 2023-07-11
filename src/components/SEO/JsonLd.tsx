@@ -1,13 +1,13 @@
 import { JsonLd } from '../../../next-seo.config';
 
-export interface JsonLdProps {
+export type JsonLdProps = {
     url: string;
     name: string;
     description: string;
     authorName: string;
 }
 
-export interface SocialProfileJsonLdProps {
+export type SocialProfileJsonLdProps = {
     name: string;
     url: string;
     facebookProfile?: string;
