@@ -24,7 +24,7 @@ export const portfolioConfig: IPortfolioConfig = {
             title: 'emcia.design',
             description: 'UI/UX Designer’s portfolio website showcasing current work, resume and allowing users to send mail directly from browser',
             link: 'https://github.com/kkuchar2/emcia.design',
-            websiteLink: 'https://emcia.design',
+            websiteLink: 'https://emcia-design-lqxhxdm30-kkuchar2.vercel.app/',
             technologies: ['Vercel', 'NextJS', 'React', 'TS', 'Styled Components', 'TailwidCSS', 'Sass Modules', 'mailgun.js']
         },
         {
