@@ -90,12 +90,6 @@ const commonMetadata = {
         index: environment === 'production',
         follow: environment === 'production',
     },
-    viewport: {
-        width: 'device-width',
-        initialScale: 1,
-        minimumScale: 1,
-        maximumScale: 5,
-    },
     manifest: '/manifest.json'
 };
 
