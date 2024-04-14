@@ -21,11 +21,11 @@ export const portfolioConfig: IPortfolioConfig = {
     ],
     projects: [
         {
-            title: 'emcia.design',
-            description: 'UI/UX Designer’s portfolio website showcasing current work, resume and allowing users to send mail directly from browser',
-            link: 'https://github.com/kkuchar2/emcia.design',
-            websiteLink: 'https://emcia-design-lqxhxdm30-kkuchar2.vercel.app/',
-            technologies: ['Vercel', 'NextJS', 'React', 'TS', 'Styled Components', 'TailwidCSS', 'Sass Modules', 'mailgun.js']
+            title: 'gaussian gradient',
+            description: 'Generator of radial gradient with Gaussian distribution stops and dither simulating mask for reducing visual banding.',
+            link: 'https://github.com/kkuchar2/smooth-gradient',
+            websiteLink: 'https://smooth-gradient.vercel.app/',
+            technologies: ['Vercel', 'NextJS', 'React', 'TS', 'Sass Modules', 'shadcn/ui']
         },
         {
             title: 'sorting visualiser',
@@ -33,6 +33,13 @@ export const portfolioConfig: IPortfolioConfig = {
             link: 'https://github.com/kkuchar2/sorting-visualizer',
             websiteLink: 'https://sortingvis.kkucharski.com/',
             technologies: ['Vercel', 'React', 'TS', 'Sass Modules', 'TailwidCSS', 'Service Workers']
+        },
+        {
+            title: 'emcia.design',
+            description: 'UI/UX Designer’s portfolio website showcasing current work, resume and allowing users to send mail directly from browser',
+            link: 'https://github.com/kkuchar2/emcia.design',
+            websiteLink: 'https://emcia-design-lqxhxdm30-kkuchar2.vercel.app/',
+            technologies: ['Vercel', 'NextJS', 'React', 'TS', 'Styled Components', 'TailwidCSS', 'Sass Modules', 'mailgun.js']
         },
         {
             title: 'openglengine',

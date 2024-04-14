@@ -2,7 +2,7 @@ type Languages = 'C' | 'C++' | 'Java' | 'C#' | 'JS' | 'HTML' | 'Python' | 'Bash'
 type CSSTechnology = 'TailwidCSS' | 'CSS Modules' | 'Styled Components' | 'SASS' | 'LESS' | 'PostCSS' | 'CSS in JS' | 'Sass Modules'
 type JSTechnology = 'React' | 'Angular' | 'Vue' | 'Svelte' | 'Ember' | 'Backbone' | 'jQuery' | 'Vanilla JS' | 'JS' | 'TS' | 'TypeScript' | 'Redux' | 'Service Workers'
 type Frameworks = 'NextJS' | 'Vite' | 'Gatsby' | 'CRA' | 'Django' | 'Unity' | 'Android'
-type Libs = 'mailgun.js' | 'imgui' | 'glfw' | 'allauth' | 'OpenCV' | 'Kafka' | 'JUnit' | 'Mockito' | 'ARCore' | 'JavaFX'
+type Libs = 'mailgun.js' | 'imgui' | 'glfw' | 'allauth' | 'OpenCV' | 'Kafka' | 'JUnit' | 'Mockito' | 'ARCore' | 'JavaFX' | 'shadcn/ui'
 type Databases = 'MySQL' | 'MariaDB' | 'MongoDB' | 'ElasticSearch' | 'Redis' | 'PostgreSQL' | 'SQLite' | 'Cassandra' | 'CouchDB' | 'Neo4j' | 'DynamoDB' | 'Firebase' | 'CockroachDB'
 
 type Deployments = 'Google Cloud Platform' | 'Firebase' | 'DigitalOcean' | 'Railway' | 'Heroku' | 'Netlify'
