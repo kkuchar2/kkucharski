@@ -1,15 +1,15 @@
-import { Header } from 'components/Header/Header';
-import { ProjectsListView } from 'components/Projects/ProjectsListView';
-import { SEO } from 'components/SEO/SEO';
-import { Arrow } from 'components/svg/Arrow';
-import { WorkList } from 'components/WorkList/WorkList';
-import { Metadata, Viewport } from 'next';
+import {Header} from 'components/Header/Header';
+import {ProjectsListView} from 'components/Projects/ProjectsListView';
+import {SEO} from 'components/SEO/SEO';
+import {Arrow} from 'components/svg/Arrow';
+import {WorkList} from 'components/WorkList/WorkList';
+import {Metadata, Viewport} from 'next';
 import Link from 'next/link';
 import styles from 'styles/Index.module.scss';
 
-import { getPageMetadata } from '../../next-seo.config';
+import {getPageMetadata} from '../../next-seo.config';
 
-export const metadata: Metadata = { ...getPageMetadata('home') };
+export const metadata: Metadata = {...getPageMetadata('home')};
 
 export const viewport: Viewport = {
     width: 'device-width',
