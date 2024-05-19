@@ -1,18 +1,7 @@
 .indexPage {
   display: grid;
-  place-items: center;
   position: relative;
   width: 100%;
-}
-
-.topSection {
-  display: grid;
-  place-items: center;
-  width: 100%;
-
-  @media (min-width: 1280px) {
-    min-height: 75svh;
-  }
 }
 
 .viewMyResume {
@@ -29,17 +18,10 @@
   }
 
   animation: show 1.5s cubic-bezier(0.175, 0.885, 0.32, 1) forwards 0.5s;
-  margin-top: 75px;
+  margin-bottom: 75px;
+  margin-top: 125px;
   opacity: 0.001;
-
-  padding-left: 20px;
-  padding-right: 20px;
-  transform: translateX(-40px);
-
-  @media (min-width: 1280px) {
-    padding-left: 0;
-    padding-right: 0;
-  }
+  text-align: center;
 }
 
 .viewMyResumeLink {

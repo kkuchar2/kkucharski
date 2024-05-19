@@ -7,10 +7,10 @@ import Link from 'next/link';
 import { useInView } from 'react-intersection-observer';
 
 import { Project } from '../../../portfolioConfig.types';
-
+ 
 import styles from './ProjectItem.module.scss';
 
-type ProjectItemProps = {
+interface ProjectItemProps {
     project: Project;
 }
 
@@ -20,7 +20,7 @@ const ProjectItem = (props: ProjectItemProps) => {
 
     const { title, description, technologies, link, websiteLink } = project;
 
-    const { ref, inView } = useInView({ threshold: 0.3, triggerOnce: true });
+    const { ref, inView } = useInView({ threshold: 0.1, triggerOnce: true });
 
     return <div className={[styles.projectItem, inView ? styles.visible : ''].join(' ')} ref={ref}>
         <div className={'flex flex-col gap-[30px]'}>

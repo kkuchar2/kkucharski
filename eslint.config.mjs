@@ -1,83 +1,18 @@
 import nextPlugin from '@next/eslint-plugin-next';
-import reactPlugin from 'eslint-plugin-react';
 import hooksPlugin from 'eslint-plugin-react-hooks';
+import ts from '@typescript-eslint/eslint-plugin';
+import tsParser from '@typescript-eslint/parser';
+import functional from 'eslint-plugin-functional';
+import imprt from 'eslint-plugin-import';
+import tailwindcss from "eslint-plugin-tailwindcss";
+
+const myRules = {
+    'object-curly-spacing': ["error", "always"]
+};
 
 export default [
     {
-        rules: {
-            'no-multiple-empty-lines': ['error', { max: 1, maxBOF: 0, maxEOF: 0 }],
-            'no-trailing-spaces': ['error', { skipBlankLines: false }],
-            'comma-spacing': 'error',
-            'comma-style': 'error',
-            'react/no-unescaped-entities': 0,
-            'react/prop-types': 0,
-            'react/jsx-curly-brace-presence': ['error', 'always'],
-            'no-var': 0,
-            'semi': 'error',
-            'quotes': [2, 'single', 'avoid-escape'],
-            'keyword-spacing': ['error'],
-            'space-in-parens': ['error', 'never'],
-            'space-infix-ops': 'error',
-            'space-unary-ops': 'error',
-            'object-curly-spacing': ['error', 'always'],
-            'wrap-regex': 'error',
-            'brace-style': [2, 'stroustrup', { allowSingleLine: true }],
-            'tailwindcss/classnames-order': 'error',
-            '@typescript-eslint/indent': ['error'],
-            'react/react-in-jsx-scope': 'off',
-            'import/order': [
-                'error',
-                {
-                    'groups': [
-                        'builtin',
-                        'external',
-                        'internal',
-                        'parent',
-                        'sibling',
-                        'index'
-                    ],
-                    'newlines-between': 'always',
-                    'alphabetize': {
-                        'order': 'asc',
-                        'caseInsensitive': true
-                    },
-                    'pathGroups': [
-                        {
-                            'pattern': 'react',
-                            'group': 'external',
-                            'position': 'before'
-                        },
-                        {
-                            'pattern': '*.css',
-                            'group': 'unknown',
-                            'position': 'after'
-                        }
-                    ],
-                    'pathGroupsExcludedImportTypes': ['builtin'],
-
-                }
-            ],
-            'no-unused-vars': 'off', // or "@typescript-eslint/no-unused-vars": "off",
-            'unused-imports/no-unused-imports': 'error',
-            'unused-imports/no-unused-vars': [
-                'warn',
-                { 'vars': 'all', 'varsIgnorePattern': '^_', 'args': 'after-used', 'argsIgnorePattern': '^_' }
-            ],
-            'tailwindcss/no-custom-classname': 'off'
-        }
-    },
-    {
-        plugins: {
-            react: reactPlugin,
-        },
-        rules: {
-            ...reactPlugin.configs['jsx-runtime'].rules,
-        },
-        settings: {
-            react: {
-                version: 'detect',
-            },
-        },
+        rules: myRules,
     },
     {
         plugins: {
@@ -86,15 +21,48 @@ export default [
         rules: hooksPlugin.configs.recommended.rules,
     },
     {
+        files: ['**/*.ts', '**/*.tsx'],
+        plugins: {
+            tailwindcss,
+        },
+        rules: {
+            'tailwindcss/classnames-order': 'error',
+            'tailwindcss/no-custom-classname': 'off'
+        }
+    },
+    {
         plugins: {
             '@next/next': nextPlugin,
         },
         rules: {
-            ...nextPlugin.configs.recommended.rules,
+            // ...nextPlugin.configs.recommended.rules,
             ...nextPlugin.configs['core-web-vitals'].rules,
         },
     },
     {
         ignores: ['.next/*'],
+    },
+    {
+        files: ['**/*.ts', '**/*.tsx'],
+        languageOptions: {
+            parser: tsParser,
+            parserOptions: {
+                ecmaFeatures: {modules: true},
+                ecmaVersion: 'latest',
+                project: './tsconfig.json',
+            },
+        },
+        plugins: {
+            functional,
+            import: imprt,
+            '@typescript-eslint': ts,
+            ts,
+        },
+        rules: {
+            ...ts.configs['eslint-recommended'].rules,
+            ...ts.configs['recommended'].rules,
+            ...myRules,
+            'ts/return-await': 2,
+        },
     },
 ];

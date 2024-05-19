@@ -13,6 +13,7 @@ const inter = Inter({
     variable: '--font-inter',
 });
 
+
 export const metadata: Metadata = {
     ...seoConfig.common
 };
