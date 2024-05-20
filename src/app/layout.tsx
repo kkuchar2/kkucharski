@@ -1,8 +1,7 @@
 import { ReactNode } from 'react';
 
-import { Metadata } from 'next';
+import { Metadata, Viewport } from 'next';
 import { Inter } from 'next/font/google';
-import Head from 'next/head';
 
 import { seoConfig } from '../../next-seo.config';
 
@@ -18,12 +17,16 @@ export const metadata: Metadata = {
     ...seoConfig.common
 };
 
-export default function RootLayout({ children }: { children: ReactNode }) {
+export const viewport: Viewport = {
+    width: 'device-width',
+    themeColor: '#151515',
+    initialScale: 1,
+    minimumScale: 1,
+    maximumScale: 5,
+};
 
+export default function RootLayout({ children }: { children: ReactNode }) {
     return <html lang={'en'}>
-        <Head>
-            <link rel={'apple-touch-icon'} sizes={'180x180'} href={'/images/apple-touch-icon.png'}/>
-        </Head>
         <body className={`${inter.variable} font-sans`}>
             <main>
                 {children}

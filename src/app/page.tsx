@@ -1,7 +1,7 @@
 import { ProjectsListView } from 'components/Projects/ProjectsListView';
 import { SEO } from 'components/SEO/SEO';
 import { Arrow } from 'components/svg/Arrow';
-import { Metadata, Viewport } from 'next';
+import { Metadata } from 'next';
 import Link from 'next/link';
 import styles from 'styles/Index.module.scss';
 
@@ -9,13 +9,6 @@ import { getPageMetadata } from '../../next-seo.config';
 import { Header } from "components/Header/Header";
  
 export const metadata: Metadata = { ...getPageMetadata('home') };
-
-export const viewport: Viewport = {
-    width: 'device-width',
-    initialScale: 1,
-    minimumScale: 1,
-    maximumScale: 5,
-};
 
 export default function Index() {
     return <div className={styles.indexPage}>

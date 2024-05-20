@@ -80,9 +80,12 @@ catch (e) {
     throw e;
 }
 
-const commonMetadata = {
+const commonMetadata : Metadata = {
     title: HOME_TITLE,
     metadataBase: siteUrlValid ? siteUrl : null,
+    icons: [
+        { rel: 'apple', url: '/images/apple-touch-icon.png' },
+    ],
     alternates: {
         canonical: '/'
     },
