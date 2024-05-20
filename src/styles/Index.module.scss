@@ -9,31 +9,35 @@
   @keyframes show {
     0% {
       opacity: 0.001;
-      transform: translateX(-40px);
+      transform: translateY(-40px);
     }
     100% {
       opacity: 1;
-      transform: translateX(0);
+      transform: translateY(0);
     }
   }
-
-  animation: show 1.5s cubic-bezier(0.175, 0.885, 0.32, 1) forwards 0.5s;
+  animation: show 1s cubic-bezier(0.175, 0.885, 0.32, 1) forwards 0.5s;
+  transform: translateY(-40px);
   margin-bottom: 75px;
   margin-top: 125px;
   opacity: 0.001;
   text-align: center;
+  display: flex;
+  justify-content: center;
 }
 
 .viewMyResumeLink {
-  color: #F56565;
-  font-size: 1.25rem;
+  color: #BBEA8B;
+  padding: 1rem 2rem;
+  border-radius: 10px;
   font-weight: 700;
   letter-spacing: -0.025em;
   line-height: 1.25;
   text-decoration: none;
+  background: #252525;
 
   &:hover {
-    color: #e34444;
-    text-decoration: underline;
+    background: #313131;
+    color: #BBEA8B;
   }
 }

@@ -1,6 +1,5 @@
 import { ProjectsListView } from 'components/Projects/ProjectsListView';
 import { SEO } from 'components/SEO/SEO';
-import { Arrow } from 'components/svg/Arrow';
 import { Metadata } from 'next';
 import Link from 'next/link';
 import styles from 'styles/Index.module.scss';
@@ -17,15 +16,14 @@ export default function Index() {
             <div className={'w-full max-w-[2000px] xl:px-[150px]'}>
                 <Header/>
                 <div className={styles.viewMyResume}>
-                    <Link
-                        prefetch={false}
-                        className={styles.viewMyResumeLink}
-                        href={'doc/resume_Krzysztof_Kucharski.pdf'}
-                        target={'blank'}
-                    >
-                        {'View my Resume'}
-                        <Arrow/>
-                    </Link>
+                        <Link
+                            prefetch={false}
+                            className={styles.viewMyResumeLink}
+                            href={'doc/resume_Krzysztof_Kucharski.pdf'}
+                            target={'blank'}
+                        >
+                            {'View my Resume'}
+                        </Link>
                 </div>
             </div>
             <ProjectsListView/>
