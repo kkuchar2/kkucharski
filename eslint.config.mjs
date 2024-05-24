@@ -7,7 +7,8 @@ import imprt from 'eslint-plugin-import';
 import tailwindcss from "eslint-plugin-tailwindcss";
 
 const myRules = {
-    'object-curly-spacing': ["error", "always"]
+    'object-curly-spacing': ["error", "always"],
+    'quotes': [2, "single", { "avoidEscape": true }]
 };
 
 export default [
