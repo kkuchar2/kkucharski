@@ -2,8 +2,10 @@ import { WorkItem } from 'components/WorkList/WorkItem';
 
 import { portfolioConfig } from '../../portfolioConfig';
 
+import styles from './WorkList.module.scss';
+
 export const WorkList = () => {
-    return <div className={'gap flex flex-col gap-[50px] px-[40px] xl:px-0'}>
+    return <div className={styles.workList}>
         {portfolioConfig.work.map((workItem, index) => {
             return <WorkItem key={index} workItem={workItem}/>;
         })}

@@ -27,17 +27,17 @@
 }
 
 .viewMyResumeLink {
-  color: #BBEA8B;
+  color: rgb(77, 189, 138);
   padding: 1rem 2rem;
   border-radius: 10px;
-  font-weight: 700;
+  font-weight: 600;
+  font-size: 0.9rem;
   letter-spacing: -0.025em;
   line-height: 1.25;
   text-decoration: none;
   background: #252525;
 
   &:hover {
-    background: #313131;
-    color: #BBEA8B;
+    background: #2d2d2d;
   }
 }

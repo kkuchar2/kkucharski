@@ -39,7 +39,7 @@ const ProjectItem = (props: ProjectItemProps) => {
                         <ExternalLink/>
                     </Link>}
                 </div>
-                <div className={'text-md max-w-[500px] text-white/[60%]'}>
+                <div className={'text-md max-w-[500px] text-white/[60%] tracking-tight'}>
                     {description}
                 </div>
             </div>
