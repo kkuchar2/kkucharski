@@ -14,7 +14,7 @@ export const TechnologyGrid = (props: TechnologyGridProps) => {
     const {
         technologies,
         gap = 10,
-        accentColor = '#00BA8D',
+        accentColor = '#d5d5d5',
         borderRadius = 10
     } = props;
 

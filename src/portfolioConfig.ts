@@ -6,17 +6,17 @@ export const portfolioConfig: IPortfolioConfig = {
             startDate: 'APR 2020',
             endDate: 'PRESENT',
             company: 'Goldman Sachs',
-            title: 'Associate · Software Engineer',
-            description: 'Maintaining and developing features for financial platform based on microservices architecture. (Java, SLANG, ReactJS).',
-            technologies: ['Java', 'Kafka', 'MongoDB', 'SLANG', 'JUnit', 'Mockito', 'React', 'TypeScript', 'CSS Modules']
+            title: 'Software Engineer',
+            description: 'Development and maintenance of microservices for real-time processing, aggregation, and analytics of financial transactions',
+            technologies: ['Java', 'Python', 'SLANG', 'Kafka', 'Vertx', 'MongoDB', 'ElasticSearch', 'JUnit', 'Mockito', 'ReactJS', 'TypeScript', 'CSS Modules']
         },
         {
             startDate: 'JAN 2018',
             endDate: 'APR 2020',
             company: 'Samsung R&D Institute',
-            title: 'Associate · Software Engineer',
-            description: 'Augmented Reality research for Visual Entertainment team. Android applications with Unity and ARCore',
-            technologies: ['Java', 'Android', 'Unity', 'ARCore', 'C#', 'JavaFX']
+            title: 'Software Engineer',
+            description: 'Research and development of Augmented Reality projects for Visual Entertainment group',
+            technologies: ['Java', 'Python', 'C++', 'C#', 'Android', 'Unity', 'ARCore', 'JavaFX', 'Docker']
         }
     ],
     projects: [
@@ -61,7 +61,7 @@ export const portfolioConfig: IPortfolioConfig = {
         },
         {
             title: 'this website',
-            description: 'UI/UX Designer’s portfolio website showcasing current work, resume and allowing users to send mail directly from browser',
+            description: 'This website is my personal portfolio showcasing my work, projects, experience resume and useful links',
             link: 'https://github.com/kkuchar2/kkucharski',
             websiteLink: 'https://kkucharski.com',
             technologies: ['Vercel', 'NextJS', 'React', 'TS', 'TailwidCSS', 'Sass Modules']
