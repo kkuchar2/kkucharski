@@ -3,8 +3,16 @@ import { IPortfolioConfig } from './portfolioConfig.types';
 export const portfolioConfig: IPortfolioConfig = {
     work: [
         {
-            startDate: 'APR 2020',
+            startDate: 'FEB 2025',
             endDate: 'PRESENT',
+            company: 'ING Hubs Poland',
+            title: 'Software Engineer',
+            description: 'Development and maintenance of services for network traffic management',
+            technologies: ['Java', 'Python', 'Spring Boot', 'Hibernate', 'Liquibase', 'Oracle', 'Openshift', 'Kafka', 'Project Reactor', 'Azure DevOps', 'ElasticSearch', 'JUnit', 'Mockito']
+        },
+        {
+            startDate: 'APR 2020',
+            endDate: 'JAN 2025',
             company: 'Goldman Sachs',
             title: 'Software Engineer',
             description: 'Development and maintenance of microservices for real-time processing, aggregation, and analytics of financial transactions',

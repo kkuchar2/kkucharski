@@ -6,6 +6,7 @@
   letter-spacing: -0.03em;
   line-height: 1.2;
   opacity: 0.001;
+  transform: translateX(-40px);
 
   @keyframes show {
     0% {
@@ -17,6 +18,4 @@
       transform: translateX(0);
     }
   }
-
-  transform: translateX(-40px);
 }

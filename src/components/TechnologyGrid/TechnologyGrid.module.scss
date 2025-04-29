@@ -4,6 +4,17 @@
 }
 
 .technologyItem {
+  animation: show 0.5s cubic-bezier(0.175, 0.885, 0.32, 1) forwards;
+  background-color: rgba(255, 255, 255, 0.06);
+  border-radius: 10px;
+  display: grid;
+  font-size: 0.7rem;
+  font-weight: 600;
+  opacity: 0.001;
+  padding: 10px 20px;
+  place-items: center;
+  transform: translateY(-40px) scale(0.5);
+
   @keyframes show {
     0% {
       opacity: 0.001;
@@ -14,18 +25,6 @@
       transform: translateY(0) scale(1);
     }
   }
-
-  animation: show 0.8s cubic-bezier(0.175, 0.885, 0.32, 1) forwards;
-  background-color: rgba(255, 255, 255, 0.06);
-  border-radius: 10px;
-
-  display: grid;
-  font-size: 12px;
-  font-weight: 600;
-  opacity: 0.001;
-  padding: 10px 20px;
-  place-items: center;
-  transform: translateY(-40px) scale(0.5);
 }
 
 @for $i from 1 through 20 {
