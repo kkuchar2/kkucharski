@@ -2,14 +2,13 @@
   display: flex;
   flex-direction: column;
   gap: 50px;
-  padding: 20px;
+  padding: 30px;
   transform: none;
   background: none;
   position: relative;
   z-index: 1;
 
-  @screen xl {
-    background: #1a1a1a;
-    border-top: 3px solid rgba(77, 189, 138, 0.3);
+  @media (min-width: 768px) {
+    padding: 10px;
   }
 }

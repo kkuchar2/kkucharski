@@ -27,10 +27,10 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
     return <html lang={'en'}>
-        <body className={`${inter.variable} font-sans`}>
-            <main>
-                {children}
-            </main>
+        <body className={`${inter.variable} font-inter`}>
+        <main>
+            {children}
+        </main>
         </body>
     </html>;
 }

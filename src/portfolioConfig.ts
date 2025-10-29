@@ -7,7 +7,7 @@ export const portfolioConfig: IPortfolioConfig = {
             endDate: 'PRESENT',
             company: 'ING Hubs Poland',
             title: 'Software Engineer',
-            description: 'Development and maintenance of services for network traffic management',
+            description: 'Backend development for network security automation platform.',
             technologies: ['Java', 'Python', 'Spring Boot', 'Hibernate', 'Liquibase', 'Oracle', 'Openshift', 'Kafka', 'Project Reactor', 'Azure DevOps', 'ElasticSearch', 'JUnit', 'Mockito']
         },
         {
@@ -15,7 +15,7 @@ export const portfolioConfig: IPortfolioConfig = {
             endDate: 'JAN 2025',
             company: 'Goldman Sachs',
             title: 'Software Engineer',
-            description: 'Development and maintenance of microservices for real-time processing, aggregation, and analytics of financial transactions',
+            description: 'Development and maintenance of microservices for real-time processing, aggregation, and analytics of financial transactions.',
             technologies: ['Java', 'Python', 'SLANG', 'Kafka', 'Vertx', 'MongoDB', 'ElasticSearch', 'JUnit', 'Mockito', 'ReactJS', 'TypeScript', 'CSS Modules']
         },
         {
@@ -23,7 +23,7 @@ export const portfolioConfig: IPortfolioConfig = {
             endDate: 'APR 2020',
             company: 'Samsung R&D Institute',
             title: 'Software Engineer',
-            description: 'Research and development of Augmented Reality projects for Visual Entertainment group',
+            description: 'Research and development of Augmented Reality projects for Visual Entertainment group.',
             technologies: ['Java', 'Python', 'C++', 'C#', 'Android', 'Unity', 'ARCore', 'JavaFX', 'Docker']
         }
     ],

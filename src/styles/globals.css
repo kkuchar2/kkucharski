@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+@theme {
+    --font-inter: 'Inter', sans-serif;
+}
+
 html {
     box-sizing: border-box;
 }

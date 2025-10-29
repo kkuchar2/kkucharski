@@ -6,6 +6,7 @@ import styles from 'styles/Index.module.scss';
 
 import { getPageMetadata } from '../../next-seo.config';
 import { Header } from "components/Header/Header";
+import {WorkList} from "components/WorkList/WorkList";
  
 export const metadata: Metadata = { ...getPageMetadata('home') };
 

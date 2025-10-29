@@ -14,8 +14,42 @@
   }
 }
 
+.present {
+  color: #cc7e30; // Example: green for "PRESENT"
+  font-weight: 700; // Optional: emphasize it
+}
+
+
+.activeDot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin-left: 5px;
+  background-color: #09e513;
+  border-radius: 50%;
+  animation: pulse 1.2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+}
+
 
 .company {
+  display: inline-flex;       // make it a flex container
+  align-items: center;        // vertically centers children (text + dot)
+  gap: 5px;                   // space between company name and dot
   color: #ffffff;
   font-size: clamp(1.2rem, 1.5vw, 1.5rem);
   font-weight: 700;
