@@ -1,69 +1,58 @@
-import nextPlugin from '@next/eslint-plugin-next';
-import hooksPlugin from 'eslint-plugin-react-hooks';
-import ts from '@typescript-eslint/eslint-plugin';
-import tsParser from '@typescript-eslint/parser';
-import functional from 'eslint-plugin-functional';
-import imprt from 'eslint-plugin-import';
-import tailwindcss from "eslint-plugin-tailwindcss";
-
-const myRules = {
-    'object-curly-spacing': ["error", "always"],
-    'quotes': [2, "single", { "avoidEscape": true }]
-};
+import js from '@eslint/js'
+import eslintReact from '@eslint-react/eslint-plugin'
+import jsxA11y from 'eslint-plugin-jsx-a11y'
+import prettier from 'eslint-plugin-prettier'
+import tailwindcss from 'eslint-plugin-tailwindcss'
+import tseslint from 'typescript-eslint'
 
 export default [
-    {
-        rules: myRules,
+  {
+    ignores: ['node_modules/**', '.next/**', 'out/**'],
+  },
+
+  js.configs.recommended,
+
+  ...tseslint.configs.recommended,
+
+  eslintReact.configs['recommended-typescript'],
+
+  {
+    files: ['**/*.{js,jsx,ts,tsx}'],
+
+    plugins: {
+      'jsx-a11y': jsxA11y,
+      prettier,
+      tailwindcss,
     },
-    {
-        plugins: {
-            'react-hooks': hooksPlugin,
-        },
-        rules: hooksPlugin.configs.recommended.rules,
+
+    settings: {
+      tailwindcss: {
+        cssConfigPath: './src/styles/globals.css',
+      },
     },
-    {
-        files: ['**/*.ts', '**/*.tsx'],
-        plugins: {
-            tailwindcss,
+
+    rules: {
+      ...jsxA11y.configs.recommended.rules,
+
+      'prettier/prettier': [
+        'error',
+        {
+          trailingComma: 'all',
+          semi: false,
+          tabWidth: 2,
+          singleQuote: true,
+          printWidth: 130,
+          endOfLine: 'auto',
+          arrowParens: 'always',
         },
-        rules: {
-            'tailwindcss/classnames-order': 'error',
-            'tailwindcss/no-custom-classname': 'off'
-        }
+      ],
+      'tailwindcss/classnames-order': 'error',
+      'tailwindcss/enforces-shorthand': 'error',
+      'tailwindcss/enforces-negative-arbitrary-values': 'error',
+      'tailwindcss/no-contradicting-classname': 'error',
+      'tailwindcss/no-unnecessary-arbitrary-value': 'error',
+      'tailwindcss/no-arbitrary-value': 'off',
+      'tailwindcss/migration-from-tailwind-2': 'off',
     },
-    {
-        plugins: {
-            '@next/next': nextPlugin,
-        },
-        rules: {
-            // ...nextPlugin.configs.recommended.rules,
-            ...nextPlugin.configs['core-web-vitals'].rules,
-        },
-    },
-    {
-        ignores: ['.next/*'],
-    },
-    {
-        files: ['**/*.ts', '**/*.tsx'],
-        languageOptions: {
-            parser: tsParser,
-            parserOptions: {
-                ecmaFeatures: {modules: true},
-                ecmaVersion: 'latest',
-                project: './tsconfig.json',
-            },
-        },
-        plugins: {
-            functional,
-            import: imprt,
-            '@typescript-eslint': ts,
-            ts,
-        },
-        rules: {
-            ...ts.configs['eslint-recommended'].rules,
-            ...ts.configs['recommended'].rules,
-            ...myRules,
-            'ts/return-await': 2,
-        },
-    },
-];
+  },
+]

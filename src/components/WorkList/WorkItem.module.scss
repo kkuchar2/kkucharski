@@ -14,22 +14,6 @@
   }
 }
 
-.present {
-  color: #cc7e30; // Example: green for "PRESENT"
-  font-weight: 700; // Optional: emphasize it
-}
-
-
-.activeDot {
-  display: inline-block;
-  width: 8px;
-  height: 8px;
-  margin-left: 5px;
-  background-color: #09e513;
-  border-radius: 50%;
-  animation: pulse 1.2s infinite;
-}
-
 @keyframes pulse {
   0% {
     transform: scale(1);
