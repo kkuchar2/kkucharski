@@ -1,34 +1,45 @@
-.technologyGrid {
+.grid {
   display: flex;
   flex-wrap: wrap;
+  gap: 0.2rem 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
-.technologyItem {
-  animation: show 0.5s cubic-bezier(0.175, 0.885, 0.32, 1) forwards;
-  background-color: rgba(255, 255, 255, 0.015);
-  border-radius: 10px;
-  display: grid;
-  font-size: 0.8rem;
-  font-weight: 600;
-  opacity: 0.001;
-  padding: 10px 20px;
-  place-items: center;
-  transform: translateY(-40px) scale(0.5);
+.item {
+  color: var(--ink-muted, #9b9f98);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  line-height: 1.35;
 
-  @keyframes show {
-    0% {
-      opacity: 0.001;
-      transform: translateY(-40px) scale(0.5);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0) scale(1);
-    }
+  &:not(:last-child)::after {
+    content: "·";
+    margin: 0 0.45rem;
+    opacity: 0.55;
   }
 }
 
-@for $i from 1 through 20 {
-  .technologyItem:nth-child(#{$i}n) {
-    animation-delay: #{$i * 0.01 + 0.3}s;
+@keyframes show {
+  from {
+    opacity: 0;
+    transform: translateY(0.75rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .item {
+    animation: show 0.5s cubic-bezier(0.175, 0.885, 0.32, 1) both;
+  }
+
+  @for $i from 1 through 12 {
+    .item:nth-child(#{$i}) {
+      animation-delay: #{0.55 + $i * 0.04}s;
+    }
   }
 }

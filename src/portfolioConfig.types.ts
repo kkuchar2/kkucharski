@@ -1,7 +1,21 @@
-type Languages = 'C' | 'C++' | 'Java' | 'C#' | 'JS' | 'HTML' | 'Python' | 'Bash' | 'SLANG'
-type CSSTechnology =
-  'TailwidCSS' | 'CSS Modules' | 'Styled Components' | 'SASS' | 'LESS' | 'PostCSS' | 'CSS in JS' | 'Sass Modules'
-type JSTechnology =
+export type Technologies =
+  | 'C'
+  | 'C++'
+  | 'Java'
+  | 'C#'
+  | 'JS'
+  | 'HTML'
+  | 'Python'
+  | 'Bash'
+  | 'SLANG'
+  | 'TailwindCSS'
+  | 'CSS Modules'
+  | 'Styled Components'
+  | 'SASS'
+  | 'LESS'
+  | 'PostCSS'
+  | 'CSS in JS'
+  | 'Sass Modules'
   | 'React'
   | 'ReactJS'
   | 'Angular'
@@ -11,12 +25,10 @@ type JSTechnology =
   | 'Backbone'
   | 'jQuery'
   | 'Vanilla JS'
-  | 'JS'
   | 'TS'
   | 'TypeScript'
   | 'Redux'
   | 'Service Workers'
-type Frameworks =
   | 'NextJS'
   | 'Vite'
   | 'Gatsby'
@@ -32,7 +44,6 @@ type Frameworks =
   | 'Liquibase'
   | 'Project Reactor'
   | 'Vertx'
-type Libs =
   | 'mailgun.js'
   | 'imgui'
   | 'glfw'
@@ -44,9 +55,6 @@ type Libs =
   | 'ARCore'
   | 'JavaFX'
   | 'shadcn/ui'
-  | 'Vertx'
-  | 'Hibernate'
-type Databases =
   | 'MySQL'
   | 'MariaDB'
   | 'MongoDB'
@@ -61,9 +69,7 @@ type Databases =
   | 'Firebase'
   | 'CockroachDB'
   | 'Oracle'
-type Deployments =
   | 'Google Cloud Platform'
-  | 'Firebase'
   | 'DigitalOcean'
   | 'Railway'
   | 'Heroku'
@@ -88,20 +94,6 @@ type Deployments =
   | 'Cloudflare Pages'
   | 'Azure DevOps'
 
-export type Technologies = Languages | CSSTechnology | JSTechnology | Frameworks | Deployments | Libs | Databases
-
-export type Project = {
-  title: string
-  image?: string
-  logo?: string
-  link?: string
-  websiteLink?: string
-  linkTitle?: string
-  tags?: string[]
-  description: string
-  technologies: Technologies[]
-}
-
 export type Work = {
   startDate: string
   endDate: string
@@ -113,5 +105,4 @@ export type Work = {
 
 export type IPortfolioConfig = {
   work: Work[]
-  projects: Project[]
 }

@@ -1,0 +1,113 @@
+.intro {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  padding-top: clamp(0.75rem, 2vw, 1.5rem);
+  max-width: 36rem;
+}
+
+.name {
+  margin: 0;
+  font-size: clamp(2.15rem, 5vw, 3.5rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  text-wrap: balance;
+  color: var(--ink, #f2f3f0);
+}
+
+.role {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--ink-muted, #9b9f98);
+}
+
+.lede {
+  margin: 0.35rem 0 0;
+  max-width: 38ch;
+  font-size: 1.05rem;
+  line-height: 1.55;
+  color: var(--ink-soft, rgba(242, 243, 240, 0.72));
+  text-wrap: pretty;
+}
+
+.email {
+  display: inline-block;
+  margin-top: 0.15rem;
+  max-width: max-content;
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  color: var(--ink-muted, #9b9f98);
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  text-underline-offset: 0.2em;
+  transition:
+    color 0.15s var(--ease, ease),
+    text-decoration-color 0.15s var(--ease, ease);
+
+  &:hover {
+    color: var(--ink, #f2f3f0);
+    text-decoration-color: currentColor;
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--accent, #3aa874);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+}
+
+.actions {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem 1.25rem;
+  margin-top: 1.25rem;
+}
+
+@keyframes show-x {
+  from {
+    opacity: 0;
+    transform: translateX(-2.5rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes show-y {
+  from {
+    opacity: 0;
+    transform: translateY(1.5rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .name {
+    animation: show-x 1s cubic-bezier(0.175, 0.885, 0.32, 1) both;
+  }
+
+  .role {
+    animation: show-x 1s cubic-bezier(0.175, 0.885, 0.32, 1) 0.15s both;
+  }
+
+  .lede {
+    animation: show-x 1s cubic-bezier(0.175, 0.885, 0.32, 1) 0.28s both;
+  }
+
+  .email {
+    animation: show-x 1s cubic-bezier(0.175, 0.885, 0.32, 1) 0.36s both;
+  }
+
+  .actions {
+    animation: show-y 0.9s cubic-bezier(0.175, 0.885, 0.32, 1) 0.48s both;
+  }
+}

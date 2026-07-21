@@ -1,0 +1,98 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-07-21T19:58:00.000Z",
+  "title": "Design System: kkucharski.com",
+  "extensions": {
+    "colorMeta": {
+      "canvas": { "role": "neutral", "displayName": "Lab Canvas", "canonical": "#151515", "tonalRamp": ["#0A0A0A", "#151515", "#1F1F1F", "#2A2A2A", "#3D3D3D", "#5A5A5A", "#8A8A8A", "#C8C8C8"] },
+      "ink": { "role": "neutral", "displayName": "Ink", "canonical": "#FFFFFF", "tonalRamp": ["#999999", "#B3B3B3", "#CCCCCC", "#E0E0E0", "#EDEDED", "#F5F5F5", "#FAFAFA", "#FFFFFF"] },
+      "accent": { "role": "primary", "displayName": "Signal Emerald", "canonical": "#4DBD8A", "tonalRamp": ["#1A3D2C", "#245C40", "#2F7A54", "#3A9970", "#4DBD8A", "#6FCCA3", "#97DBBC", "#C4EBDA"] },
+      "atmosphere-violet": { "role": "tertiary", "displayName": "Violet Haze", "canonical": "#9E5CFF", "tonalRamp": ["#2A1844", "#3F2466", "#5A3391", "#7A45C4", "#9E5CFF", "#B585FF", "#CBAEFF", "#E5D6FF"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Person name only." },
+      "headline": { "displayName": "Headline", "purpose": "Section titles such as Projects." },
+      "title": { "displayName": "Title", "purpose": "Company and project titles." },
+      "body": { "displayName": "Body", "purpose": "Descriptions and role lines." },
+      "label": { "displayName": "Label", "purpose": "Chips and dates." }
+    },
+    "shadows": [],
+    "motion": [
+      { "name": "ease-entrance", "value": "cubic-bezier(0.175, 0.885, 0.32, 1)", "purpose": "Staggered section and card entrances." },
+      { "name": "duration-entrance", "value": "0.8s", "purpose": "Default show animation length." }
+    ],
+    "breakpoints": [
+      { "name": "md", "value": "768px" },
+      { "name": "lg", "value": "1024px" },
+      { "name": "xl", "value": "1280px" },
+      { "name": "2xl", "value": "1536px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Resume CTA",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Primary conversion control: open the PDF resume.",
+      "html": "<a class=\"ds-btn-primary\" href=\"#\">View my Resume</a>",
+      "css": ".ds-btn-primary{display:inline-block;color:#4DBD8A;padding:1rem 2rem;border-radius:10px;font-weight:600;font-size:1rem;letter-spacing:-0.025em;line-height:1.25;text-decoration:none;border:2px solid rgba(77,189,138,0.3);background:transparent;transition:background 0.2s ease,border-color 0.2s ease}.ds-btn-primary:hover{background:rgba(255,255,255,0.12);border-color:rgba(77,189,138,0.55)}.ds-btn-primary:focus-visible{outline:2px solid #4DBD8A;outline-offset:3px}"
+    },
+    {
+      "name": "Project Card",
+      "kind": "card",
+      "refersTo": "card-project",
+      "description": "Flat project surface with hairline border and whisper fill.",
+      "html": "<article class=\"ds-card-project\"><h3 class=\"ds-card-title\">smooth gradient</h3><p class=\"ds-card-body\">Interactive radial gradient generator.</p></article>",
+      "css": ".ds-card-project{border:1px solid rgba(255,255,255,0.1);border-radius:15px;padding:1.75rem;background:rgba(255,255,255,0.03);color:#fff}.ds-card-title{margin:0 0 1rem;font-size:1.25rem;font-weight:700}.ds-card-body{margin:0;color:rgba(255,255,255,0.6);max-width:500px;letter-spacing:0.025em}"
+    },
+    {
+      "name": "Tech Chip",
+      "kind": "chip",
+      "refersTo": "chip-tech",
+      "description": "Technology label in the project chip row.",
+      "html": "<span class=\"ds-chip-tech\">React</span>",
+      "css": ".ds-chip-tech{display:inline-grid;place-items:center;background:rgba(255,255,255,0.015);color:#d0d0d0;border-radius:10px;padding:10px 20px;font-size:0.8rem;font-weight:600}"
+    },
+    {
+      "name": "Work Item",
+      "kind": "custom",
+      "refersTo": null,
+      "description": "Employment row: dates, company, title, description.",
+      "html": "<div class=\"ds-work\"><div class=\"ds-work-meta\"><span class=\"ds-work-date\">FEB 2025 - PRESENT</span><span class=\"ds-work-company\">ING Hubs Poland</span></div><div class=\"ds-work-title\">Software Engineer</div><p class=\"ds-work-body\">Backend development for network security automation platform.</p></div>",
+      "css": ".ds-work{max-width:700px;color:#fff}.ds-work-meta{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-bottom:0.5rem}.ds-work-date{color:#999;font-size:1rem;font-weight:800}.ds-work-company{color:#fff;font-size:1.5rem;font-weight:700}.ds-work-title{font-size:1.25rem;margin-bottom:0.75rem}.ds-work-body{margin:0;color:rgba(255,255,255,0.6)}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Crafted Brief",
+    "overview": "A personal engineer portfolio that a recruiter can finish in under a minute, yet still feels designed by someone who cares about UI. Dark canvas, one green action, soft atmospheric color in the background only. Hierarchy does the work: name, employers, projects, resume.\n\nThe system rejects SaaS product landings and agency pitch decks. It stays a personal page: identity first, proof second, conversion last. Atmosphere blobs are ambient, never the brand.",
+    "keyCharacteristics": [
+      "Dark near-black canvas with white ink and one emerald accent",
+      "Inter today (technical default); hierarchy carries more weight than font novelty",
+      "Flat surfaces: borders and tonal fills, not drop shadows",
+      "Entrance motion that must never hide content when reduced or blocked",
+      "Equal project cards today; featured hierarchy is an allowed evolution"
+    ],
+    "rules": [
+      { "name": "The One Signal Rule", "body": "Emerald is reserved for the resume action (and future primary CTAs of the same intent). Do not sprinkle green across cards, badges, or links.", "section": "colors" },
+      { "name": "The Atmosphere Stay-Back Rule", "body": "Blobs stay low opacity and behind content. If the page reads as “purple UI,” atmosphere has taken over the brand.", "section": "colors" },
+      { "name": "The Weight Ladder Rule", "body": "Name is the heaviest element on the page. Section titles next. Never let a chip or badge out-shout the name.", "section": "typography" },
+      { "name": "The Tracking Floor Rule", "body": "Display letter-spacing must stay ≥ -0.04em (current name uses -0.03em).", "section": "typography" },
+      { "name": "The Flat-By-Default Rule", "body": "Surfaces are flush with the canvas. Hover may brighten fills or scale icons slightly; it must not invent a floating card.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do keep the resume CTA as the single emerald control on the homepage.",
+      "Do lead with name, employers, and projects before decoration.",
+      "Do use hairline borders and whisper fills for project surfaces.",
+      "Do keep content visible without relying on entrance animations.",
+      "Do preserve a personal engineer-page feel when evolving layout or type."
+    ],
+    "donts": [
+      "Don't turn this into a SaaS product landing or agency pitch deck (PRODUCT.md).",
+      "Don't use atmosphere violet/blue/magenta for CTAs, headings, or chips.",
+      "Don't add purple glow, glassmorphism stacks, or multi-layer card shadows.",
+      "Don't gate readability on motion (no permanent near-zero opacity without a visible fallback).",
+      "Don't invent a second primary CTA with the same intent as the resume.",
+      "Don't overlay decorative pills on project imagery if screenshots are added later."
+    ]
+  }
+}

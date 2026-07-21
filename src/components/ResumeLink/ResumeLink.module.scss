@@ -1,0 +1,35 @@
+.resumeLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 2.6rem;
+  padding: 0.65rem 1.2rem;
+  border-radius: 6px;
+  border: 1px solid var(--accent, #3aa874);
+  background: transparent;
+  color: var(--accent, #3aa874);
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  white-space: nowrap;
+  transition:
+    background-color 0.18s var(--ease, ease),
+    border-color 0.18s var(--ease, ease),
+    color 0.18s var(--ease, ease);
+
+  &:hover {
+    background: var(--accent-dim, rgba(58, 168, 116, 0.16));
+    border-color: var(--accent, #3aa874);
+    color: var(--accent, #3aa874);
+  }
+
+  &:active {
+    background: rgba(58, 168, 116, 0.24);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--accent, #3aa874);
+    outline-offset: 3px;
+  }
+}

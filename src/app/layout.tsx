@@ -1,15 +1,10 @@
 import type { Metadata, Viewport } from 'next'
-import { Inter } from 'next/font/google'
+import { GeistSans } from 'geist/font/sans'
 import type { ReactNode } from 'react'
 
 import { isProduction, SITE_DESCRIPTION, SITE_NAME, SITE_URL } from '../config/site'
 
 import '../styles/globals.css'
-
-const inter = Inter({
-  subsets: ['latin'],
-  variable: '--font-inter',
-})
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -59,7 +54,7 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   width: 'device-width',
-  themeColor: '#151515',
+  themeColor: '#3a3d39',
   initialScale: 1,
   minimumScale: 1,
   maximumScale: 5,
@@ -67,8 +62,8 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
-      <body className={`${inter.variable} font-sans`}>
+    <html lang="en" className={`${GeistSans.variable} antialiased`}>
+      <body className="font-sans">
         <main>{children}</main>
       </body>
     </html>

@@ -10,6 +10,7 @@ export type JsonLdProps = {
 export type SocialProfileJsonLdProps = {
   name: string
   url: string
+  email?: string
   linkedinProfile?: string
   githubProfile?: string
 }
@@ -31,13 +32,14 @@ export const webPageJsonLd = (props: JsonLdProps) => {
 }
 
 export const socialProfileJsonLd = (params: SocialProfileJsonLdProps) => {
-  const { name, url, linkedinProfile, githubProfile } = params
+  const { name, url, email, linkedinProfile, githubProfile } = params
 
   return {
     '@context': 'https://schema.org',
     '@type': 'Person',
     name,
     url,
+    ...(email ? { email } : {}),
     sameAs: [
       linkedinProfile ? `https://www.linkedin.com/in/${linkedinProfile}` : null,
       githubProfile ? `https://github.com/${githubProfile}` : null,
@@ -49,6 +51,7 @@ export const homePageJsonLd = [
   socialProfileJsonLd({
     name: 'Krzysztof Kucharski',
     url: SITE_URL,
+    email: 'krzysiekkucharski7@gmail.com',
     linkedinProfile: 'kkuchar',
     githubProfile: 'kkuchar2',
   }),
