@@ -1,4 +1,5 @@
 import { Experience } from 'components/Experience/Experience'
+import { GrowingTree } from 'components/GrowingTree/GrowingTree'
 import { Intro } from 'components/Intro/Intro'
 import { JsonLdScripts } from 'components/SEO/JsonLdScripts'
 
@@ -8,11 +9,7 @@ export default function Index() {
   return (
     <div className={styles.page}>
       <JsonLdScripts />
-      <div className="blob-container" aria-hidden="true">
-        <div className="blob blob-1" />
-        <div className="blob blob-2" />
-        <div className="blob blob-3" />
-      </div>
+      <GrowingTree />
       <div className={styles.shell}>
         <Intro />
         <Experience />

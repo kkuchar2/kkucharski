@@ -1,8 +1,7 @@
 @import "tailwindcss";
 
 /*
-  Charcoal canvas with soft atmosphere blobs behind content.
-  Accent stays quiet; ink does the hierarchy.
+  Charcoal canvas. Accent stays quiet; ink does the hierarchy.
 */
 :root {
   --canvas: #3a3d39;
@@ -62,90 +61,6 @@ a {
 ::selection {
   background: rgba(58, 168, 116, 0.35);
   color: #fff;
-}
-
-/* Atmosphere — decorative only, stays behind content */
-.blob-container {
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  overflow: hidden;
-  pointer-events: none;
-}
-
-.blob {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(72px);
-  will-change: transform;
-}
-
-.blob-1 {
-  width: min(70vw, 42rem);
-  height: min(70vw, 42rem);
-  left: -8%;
-  top: 12%;
-  background: radial-gradient(circle, rgba(158, 92, 255, 0.45) 0%, transparent 70%);
-  opacity: 0.22;
-}
-
-.blob-2 {
-  width: min(45vw, 28rem);
-  height: min(45vw, 28rem);
-  right: -6%;
-  top: 55%;
-  background: radial-gradient(circle, rgba(92, 129, 255, 0.5) 0%, transparent 70%);
-  opacity: 0.28;
-}
-
-.blob-3 {
-  width: min(35vw, 20rem);
-  height: min(35vw, 20rem);
-  right: 22%;
-  top: -4%;
-  background: radial-gradient(circle, rgba(255, 92, 171, 0.45) 0%, transparent 70%);
-  opacity: 0.2;
-}
-
-@keyframes blob-drift-1 {
-  from {
-    transform: translate(0, 0) scale(1);
-  }
-  to {
-    transform: translate(48px, 64px) scale(1.08);
-  }
-}
-
-@keyframes blob-drift-2 {
-  from {
-    transform: translate(0, 0) scale(1);
-  }
-  to {
-    transform: translate(-56px, -40px) scale(1.12);
-  }
-}
-
-@keyframes blob-drift-3 {
-  from {
-    transform: translate(0, 0) scale(1);
-  }
-  to {
-    transform: translate(36px, 72px) scale(0.94);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .blob-1 {
-    animation: blob-drift-1 25s ease-in-out infinite alternate;
-  }
-
-  .blob-2 {
-    animation: blob-drift-2 30s ease-in-out infinite alternate;
-  }
-
-  .blob-3 {
-    animation: blob-drift-3 32s ease-in-out infinite alternate;
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -1,9 +1,13 @@
 .page {
+  position: relative;
   width: 100%;
   color: var(--ink, #f2f3f0);
+  isolation: isolate;
 }
 
 .shell {
+  position: relative;
+  z-index: 1;
   width: 100%;
   max-width: 64rem;
   margin: 0 auto;
